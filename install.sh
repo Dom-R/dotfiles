@@ -30,7 +30,7 @@ function clone_repo() {
     if test -e $DOTFILES_REPO; then
         substep "${DOTFILES_REPO} already exists."
     else
-        url=https://github.com/Sajjadhosn/dotfiles.git
+        url=https://github.com/Dom-R/dotfiles.git
         if git clone "$url" $DOTFILES_REPO; then
             success "Cloning into ${DOTFILES_REPO} succeded."
         else
