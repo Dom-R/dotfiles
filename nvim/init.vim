@@ -11,3 +11,5 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
+
+let g:lightline = {'colorscheme': 'molokai'}
