@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -19,3 +20,6 @@ set softtabstop=0 expandtab shiftwidth=2 smarttab
 set number
 set ignorecase
 set smartcase
+
+syntax on
+colorscheme dracula
