@@ -6,8 +6,8 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
