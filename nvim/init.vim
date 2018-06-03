@@ -16,3 +16,6 @@ call plug#end()
 let g:lightline = {'colorscheme': 'molokai'}
 
 set softtabstop=0 expandtab shiftwidth=2 smarttab
+set number
+set ignorecase
+set smartcase
