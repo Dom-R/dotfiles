@@ -9,6 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-endwise'
 
 call plug#end()
 
