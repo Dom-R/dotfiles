@@ -5,6 +5,7 @@ brew "ruby"
 brew "rbenv"
 brew "the_silver_searcher"
 brew "fish"
+brew "tig"
 # brew "tmux"
 
 cask "firefox"
