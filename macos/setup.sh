@@ -6,7 +6,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Sleep Mode
 sudo systemsetup -setcomputersleep Never # Computer never sleep
-sudo systemsetup -setdisplaysleep 5 # Display sleeps after 5 minutes 
+sudo systemsetup -setdisplaysleep 5 # Display sleeps after 5 minutes
 sudo pmset -a hibernatemode 0 # Disable hibernation
 
 # Dock
