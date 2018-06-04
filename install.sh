@@ -29,7 +29,7 @@ function brew_install() {
 function clone_repo() {
     info "Cloning dotfiles into ${DOTFILES_REPO} ..."
     if test -e $DOTFILES_REPO; then
-        substep "${DOTFILES_REPO} already exists."
+        info "${DOTFILES_REPO} already exists."
     else
         url=https://github.com/Dom-R/dotfiles.git
         if git clone "$url" $DOTFILES_REPO; then
@@ -42,9 +42,11 @@ function clone_repo() {
 }
 
 function execute_setups() {
-  find * -name "setup.sh" | while read setup; do
-      ./$setup
-  done
+    info "Executing other setups"
+    find * -name "setup.sh" | while read setup; do
+        ./$setup
+    done
+    success "Other setups executed successfully"
 }
 
 # Install Homebrew
