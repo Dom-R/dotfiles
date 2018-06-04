@@ -2,4 +2,4 @@
 
 . scripts/functions.sh
 
-symlink init.vim ~/.config/nvim/init.vim
+symlink "$DOTFILES_REPO/nvim/init.vim" ~/.config/nvim/init.vim

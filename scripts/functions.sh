@@ -1,5 +1,7 @@
 #! /usr/bin/env sh
 
+DOTFILES_REPO=~/.dotfiles
+
 symlink() {
     dir=$(dirname "$2")
 
