@@ -5,6 +5,7 @@ main() {
     brew_install git
     clone_repo
     install_brewfiles
+    execute_setups
 }
 
 DOTFILES_REPO=~/.dotfiles
@@ -38,6 +39,12 @@ function clone_repo() {
             exit 1
         fi
     fi
+}
+
+function execute_setups() {
+  find * -name "setup.sh" | while read setup; do
+      ./$setup
+  done
 }
 
 # Install Homebrew
