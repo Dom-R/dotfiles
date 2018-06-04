@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
+    sudo_me
     install_brew
     brew_install git
     clone_repo
@@ -72,6 +73,19 @@ function install_brewfiles() {
         else
             error "Brewfile installation failed."
             exit 1
+    fi
+}
+
+function sudo_me() {
+    info "Prompting for sudo password..."
+    if sudo --validate; then
+        # Keep-alive
+        while true; do sudo --non-interactive true; \
+            sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+        success "Sudo credentials updated."
+    else
+        error "Obtaining sudo credentials failed."
+        exit 1
     fi
 }
 
