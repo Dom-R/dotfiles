@@ -30,7 +30,7 @@ function brew_install() {
 function clone_repo() {
     info "Cloning dotfiles into ${DOTFILES_REPO} ..."
     if test -e $DOTFILES_REPO; then
-        info "${DOTFILES_REPO} already exists."
+        success "${DOTFILES_REPO} already exists."
     else
         url=https://github.com/Dom-R/dotfiles.git
         if git clone "$url" $DOTFILES_REPO; then
@@ -44,7 +44,7 @@ function clone_repo() {
 
 function execute_setups() {
     find * -name "setup.sh" | while read setup; do
-        info "Executing $setup"
+        substep "Executing $setup"
         if sh $setup; then
             success "Executed $setup successfully"
           else
@@ -59,7 +59,7 @@ function install_brew() {
     info "Installing Homebrew..."
     if [[ $(which brew) == "/usr/local/bin/brew" ]]
     then
-        info "Homebrew installed already, skipping"
+        success "Homebrew already installed."
     else
         if /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; then
             success "Homebrew installed succeded."
@@ -118,6 +118,10 @@ function coloredEcho() {
 
 function info() {
     coloredEcho "$1" blue "========>"
+}
+
+function substep() {
+    coloredEcho "$1" magenta "===="
 }
 
 function success() {
