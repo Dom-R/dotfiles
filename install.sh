@@ -45,6 +45,7 @@ function clone_repo() {
 function execute_setups() {
     info "Executing other setups"
     find * -name "setup.sh" | while read setup; do
+        info "Executing $setup"
         ./$setup
     done
     success "Other setups executed successfully"
