@@ -43,6 +43,8 @@ function clone_repo() {
 }
 
 function execute_setups() {
+    cd "$DOTFILES_REPO"
+
     find * -name "setup.sh" | while read setup; do
         substep "Executing $setup"
         if sh $setup; then
