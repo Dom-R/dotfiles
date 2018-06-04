@@ -6,6 +6,7 @@ main() {
     brew_install git
     clone_repo
     install_brewfiles
+    change_shell_to_fish
     execute_setups
 }
 
@@ -22,6 +23,35 @@ function brew_install() {
             success "Package ${package_to_install} installation succeeded."
         else
             error "Package ${package_to_install} installation failed."
+            exit 1
+        fi
+    fi
+}
+
+function change_shell_to_fish() {
+    info "Fish shell setup..."
+    if grep --quiet fish <<< "$SHELL"; then
+        success "Fish shell already exists."
+    else
+        user=$(whoami)
+        substep "Adding Fish executable to /etc/shells"
+        if grep --fixed-strings --line-regexp --quiet \
+            "/usr/local/bin/fish" /etc/shells; then
+            substep "Fish executable already exists in /etc/shells"
+        else
+            if echo /usr/local/bin/fish | sudo tee -a /etc/shells > /dev/null;
+            then
+                substep "Fish executable successfully added to /etc/shells"
+            else
+                error "Failed to add Fish executable to /etc/shells"
+                exit 1
+            fi
+        fi
+        substep "Switching shell to Fish for \"${user}\""
+        if sudo chsh -s /usr/local/bin/fish "$user"; then
+            success "Fish shell successfully set for \"${user}\""
+        else
+            error "Please try setting the Fish shell again."
             exit 1
         fi
     fi
