@@ -30,4 +30,4 @@ set ignorecase
 set smartcase
 
 syntax on
-colorscheme dracula
+silent! colorscheme dracula
