@@ -17,4 +17,4 @@ symlink() {
     fi
 }
 
-symlink init.vim ~ ~/.config/nvim/init.vim
+symlink init.vim ~/.config/nvim/init.vim
