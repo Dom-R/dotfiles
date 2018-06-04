@@ -1,16 +1,18 @@
 #! /usr/bin/env sh
 
 symlink() {
-    OVERWRITTEN=""
-    if [ -e "$2" ] || [ -h "$2" ]; then
-        OVERWRITTEN="(Overwritten)"
-        if ! rm -r "$2"; then
-          error "Failed to remove existing file(s) at $2."
-          exit 1
-        fi
+    dir=$(dirname "$2")
+
+    if test ! -e "$dir"; then
+       info "Creating folder path for $2"
+       if mkdir -p "$dir"; then
+           success "Created folder path successfully."
+       else
+           error "Created folder path failed."
+       fi
     fi
     if ln -s "$1" "$2"; then
-        success "Symlinked $2 to $1. $OVERWRITTEN"
+        success "Symlinked $2 to $1."
     else
         error "Symlinking $2 to $1 failed."
         exit 1
