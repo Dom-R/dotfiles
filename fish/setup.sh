@@ -31,8 +31,23 @@ function change_shell_to_fish() {
     fi
 }
 
+function install_oh_my_fish() {
+    info "Installing oh-my-fish..."
+    if test -d "$OMF_PATH"; then
+        success "Oh-my-fish already exists."
+    else
+        if curl -L https://get.oh-my.fish | fish; then
+            success "Oh-my-fish installation succeeded."
+        else
+            error "Oh-my-fish installation failed."
+        fi
+    fi
+}
+
 if change_shell_to_fish; then
     success "Successfully set up fish shell."
 else
     error "Failed setting up fish shell."
 fi
+
+install_oh_my_fish
