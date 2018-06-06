@@ -30,7 +30,15 @@ function brew_install() {
 function clone_repo() {
     info "Cloning dotfiles into ${DOTFILES_REPO} ..."
     if test -e $DOTFILES_REPO; then
-        success "${DOTFILES_REPO} already exists."
+        info "${DOTFILES_REPO} already exists."
+
+        cd "$DOTFILES_REPO"
+        if git pull; then
+            success "${DOTFILES_REPO} updated successfully."
+        else
+            error "${DOTFILES_REPO} update failed."
+        fi
+        cd "-"
     else
         url=https://github.com/Dom-R/dotfiles.git
         if git clone "$url" $DOTFILES_REPO; then
