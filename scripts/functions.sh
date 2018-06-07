@@ -13,8 +13,15 @@ symlink() {
            error "Created folder path failed."
        fi
     fi
+    OVERWRITTEN=""
+    if [ -e "$2" ] || [ -h "$2" ]; then
+        OVERWRITTEN="(Overwritten)"
+        if ! rm -r "$2"; then
+            substep_error "Failed to remove existing file(s) at $2."
+        fi
+    fi
     if ln -s "$1" "$2"; then
-        success "Symlinked $2 to $1."
+        success "Symlinked $2 to $1. $OVERWRITTEN"
     else
         error "Symlinking $2 to $1 failed."
         exit 1
