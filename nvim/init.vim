@@ -37,3 +37,5 @@ set smartcase
 
 syntax on
 silent! colorscheme dracula
+
+let NERDTreeShowHidden=1
