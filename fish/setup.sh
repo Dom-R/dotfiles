@@ -51,4 +51,4 @@ else
 fi
 
 install_oh_my_fish
-symlink "$DOTFILES_REPO/nvim/config.fish" ~/.config/fish/config.fish
+symlink "$DOTFILES_REPO/fish/config.fish" ~/.config/fish/config.fish
