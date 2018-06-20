@@ -21,17 +21,20 @@ autocmd VimEnter * if argc() == 1 && !isdirectory(argv()[0]) && !exists("s:std_i
 " Closes NERDTree when it is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Show hidden files in NERDtree
+let NERDTreeShowHidden=1
+
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+let g:lightline = {'colorscheme': 'molokai'}
+
 Plug 'tpope/vim-endwise'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
-
-let g:lightline = {'colorscheme': 'molokai'}
 
 set softtabstop=0 expandtab shiftwidth=2 smarttab
 set number
@@ -41,4 +44,3 @@ set smartcase
 syntax on
 silent! colorscheme dracula
 
-let NERDTreeShowHidden=1
