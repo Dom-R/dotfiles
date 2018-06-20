@@ -33,6 +33,8 @@ let g:lightline = {'colorscheme': 'molokai'}
 
 Plug 'tpope/vim-endwise'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ntpeters/vim-better-whitespace'
+let g:strip_whitespace_on_save=1
 
 call plug#end()
 
