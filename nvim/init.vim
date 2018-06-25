@@ -36,6 +36,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_on_save=1
 
+Plug 'janko-m/vim-test'
+
 call plug#end()
 
 set softtabstop=0 expandtab shiftwidth=2 smarttab
