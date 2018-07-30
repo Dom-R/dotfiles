@@ -48,3 +48,5 @@ set smartcase
 syntax on
 silent! colorscheme dracula
 
+" Enable esc to exit terminal inside terminal mode
+tnoremap <Esc> <C-\><C-n>
