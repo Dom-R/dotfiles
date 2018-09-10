@@ -26,6 +26,7 @@ let NERDTreeShowHidden=1
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+nnoremap <Leader>p :Files<CR>
 
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
