@@ -40,6 +40,11 @@ Plug 'janko-m/vim-test'
 
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
+Plug 'justinmk/vim-sneak'
+
+" Uses label mode to jump between searches
+let g:sneak#label = 1
+
 call plug#end()
 
 set softtabstop=0 expandtab shiftwidth=2 smarttab
