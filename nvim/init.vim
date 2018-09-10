@@ -38,9 +38,7 @@ Plug 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_on_save=1
 
 Plug 'janko-m/vim-test'
-
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-
 Plug 'justinmk/vim-sneak'
 
 " Uses label mode to jump between searches
@@ -50,12 +48,22 @@ call plug#end()
 
 " Set comma as leader
 let mapleader = ","
+
+" Tab properties
 set softtabstop=0 expandtab shiftwidth=2 smarttab
+
+" Turn on line numbers
 set number
+
+" Ignore case on patterns unless specified
 set ignorecase
 set smartcase
 
+" Turn on syntax
 syntax on
+
+" Set up dracula as colorscheme in silent mode due to it not existing when
+" freshly installed
 silent! colorscheme dracula
 
 " Enable esc to exit terminal inside terminal mode
