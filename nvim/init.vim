@@ -48,6 +48,8 @@ let g:sneak#label = 1
 
 call plug#end()
 
+" Set comma as leader
+let mapleader = ","
 set softtabstop=0 expandtab shiftwidth=2 smarttab
 set number
 set ignorecase
