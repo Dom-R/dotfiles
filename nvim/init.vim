@@ -29,8 +29,6 @@ Plug 'junegunn/fzf.vim'
 nnoremap <Leader>p :Files<CR>
 
 Plug 'w0rp/ale'
-Plug 'itchyny/lightline.vim'
-let g:lightline = {'colorscheme': 'molokai'}
 
 Plug 'tpope/vim-endwise'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -43,6 +41,12 @@ Plug 'justinmk/vim-sneak'
 
 " Uses label mode to jump between searches
 let g:sneak#label = 1
+
+Plug 'tyrannicaltoucan/vim-quantum'
+let g:quantum_black=1
+
+Plug 'itchyny/lightline.vim'
+let g:lightline = {'colorscheme': 'quantum'}
 
 call plug#end()
 
@@ -62,9 +66,13 @@ set smartcase
 " Turn on syntax
 syntax on
 
-" Set up dracula as colorscheme in silent mode due to it not existing when
+" Turn on dark brackground and true color
+set background=dark
+set termguicolors
+
+" Set up quantum as colorscheme in silent mode due to it not existing when
 " freshly installed
-silent! colorscheme dracula
+silent! colorscheme quantum
 
 " Enable esc to exit terminal inside terminal mode
 tnoremap <Esc> <C-\><C-n>
