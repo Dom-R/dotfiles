@@ -42,11 +42,15 @@ Plug 'justinmk/vim-sneak'
 " Uses label mode to jump between searches
 let g:sneak#label = 1
 
+" Installing quantum colorscheme with dark mode enabled
 Plug 'tyrannicaltoucan/vim-quantum'
 let g:quantum_black=1
 
 Plug 'itchyny/lightline.vim'
 let g:lightline = {'colorscheme': 'quantum'}
+
+" Highligh yanks
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
