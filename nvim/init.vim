@@ -80,3 +80,6 @@ silent! colorscheme quantum
 
 " Enable esc to exit terminal inside terminal mode
 tnoremap <Esc> <C-\><C-n>
+
+" Enable highlighting and previewing substitutions
+set inccommand=split
