@@ -80,3 +80,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " Enable highlighting and previewing substitutions
 set inccommand=split
+
+" Saving keystrokes when moving between splits
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
