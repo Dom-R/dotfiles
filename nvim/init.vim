@@ -28,10 +28,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 nnoremap <Leader>p :Files<CR>
 
-Plug 'w0rp/ale'
-
 Plug 'tpope/vim-endwise'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_on_save=1
 
@@ -54,8 +51,6 @@ Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
-" Set comma as leader
-let mapleader = ","
 
 " Tab properties
 set softtabstop=0 expandtab shiftwidth=2 smarttab
