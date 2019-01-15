@@ -49,8 +49,10 @@ let g:lightline = {'colorscheme': 'quantum'}
 " Highligh yanks
 Plug 'machakann/vim-highlightedyank'
 
-call plug#end()
+" Code Completion
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
+call plug#end()
 
 " Tab properties
 set softtabstop=0 expandtab shiftwidth=2 smarttab
