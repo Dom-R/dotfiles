@@ -27,8 +27,8 @@ let NERDTreeShowHidden=1
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-nnoremap <Leader>f :Files!<CR>
-nnoremap <Leader>b :Buffers!<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 Plug 'tpope/vim-endwise'
 Plug 'ntpeters/vim-better-whitespace'
