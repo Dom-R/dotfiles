@@ -32,7 +32,8 @@ nnoremap <Leader>b :Buffers<CR>
 
 Plug 'tpope/vim-endwise'
 Plug 'ntpeters/vim-better-whitespace'
-let g:strip_whitespace_on_save=1
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
 Plug 'janko-m/vim-test'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -43,7 +44,7 @@ let g:sneak#label = 1
 
 " Installing quantum colorscheme with dark mode enabled
 Plug 'tyrannicaltoucan/vim-quantum'
-let g:quantum_black=1
+let g:quantum_black = 1
 
 Plug 'itchyny/lightline.vim'
 let g:lightline = {'colorscheme': 'quantum'}
