@@ -9,16 +9,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 
-" Open NERDTree when opening nvim
-autocmd VimEnter * NERDTree
-
-" Focus on NERDTree if a folder was opened
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | wincmd p | endif
-
-" Focus on file if a file was opened
-autocmd VimEnter * if argc() == 1 && !isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | endif
-
 " Closes NERDTree when it is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
