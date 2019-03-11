@@ -14,3 +14,7 @@ cask "iterm2"
 cask "postman"
 cask "slack"
 cask "docker"
+
+" Utility to find test/app files from the opposite one
+tap "uptech/homebrew-oss"
+brew "uptech/oss/alt"
