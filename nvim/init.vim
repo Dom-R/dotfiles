@@ -49,6 +49,10 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " Add more text object to operate(|, [, {, etc)
 Plug 'wellle/targets.vim'
 
+" Undo tree visualization
+Plug 'mbbill/undotree'
+nnoremap <Leader>u :UndotreeToggle<CR>
+
 call plug#end()
 
 " Tab properties
