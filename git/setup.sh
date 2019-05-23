@@ -22,10 +22,20 @@ function git_aliases() {
     git config --global alias.st status
 }
 
+function git_editor() {
+    git config --global core.editor "nvim"
+}
+
 configure_git
 info "Adding git aliases"
 if git_aliases; then
   success "Adding git aliases succeded"
 else
   error "Adding git aliases failed"
+fi
+info "Changing git edit"
+if git_editor; then
+  success "Changing git editor succeded"
+else
+  error "Changing git editor failed"
 fi
