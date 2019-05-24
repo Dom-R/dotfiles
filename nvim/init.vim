@@ -15,11 +15,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
 
-Plug 'srstevenson/vim-picker'
-let g:picker_find_executable = 'rg'
-let g:picker_find_flags = '--color never --files'
-nnoremap <Leader>f :PickerEdit<CR>
-nnoremap <Leader>b :PickerBuffer<CR>
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 Plug 'tpope/vim-endwise'
 Plug 'ntpeters/vim-better-whitespace'
