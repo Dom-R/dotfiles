@@ -3,7 +3,7 @@
 . scripts/functions.sh
 
 function configure_git() {
-      username="Dom-R"
+      username="Dominik Reller"
       email="Dom-R@users.noreply.github.com"
 
       info "Configuring git..."
