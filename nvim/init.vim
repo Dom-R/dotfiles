@@ -99,3 +99,6 @@ endfunction
 
 " Find the alternate file for the current path and open it
 nnoremap <Leader>. :w<CR>:call AltCommand(expand('%'), ':e')<CR>
+
+" Set grep to use ripgrep with smart case
+set grepprg=rg\ --smart-case\ --vimgrep
