@@ -102,3 +102,9 @@ nnoremap <Leader>. :w<CR>:call AltCommand(expand('%'), ':e')<CR>
 
 " Set grep to use ripgrep with smart case
 set grepprg=rg\ --smart-case\ --vimgrep
+
+" Use leader as a shortcut to copy and paste from system buffer
+vnoremap <Leader>y "+y
+nnoremap <Leader>yy "+yy
+nnoremap <Leader>p "+p
+vnoremap <Leader>p "+p
