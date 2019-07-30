@@ -43,7 +43,7 @@ let g:lightline = {'colorscheme': 'quantum'}
 Plug 'machakann/vim-highlightedyank'
 
 " Code Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Add more text object to operate(|, [, {, etc)
 Plug 'wellle/targets.vim'
