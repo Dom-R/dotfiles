@@ -52,6 +52,9 @@ Plug 'wellle/targets.vim'
 Plug 'mbbill/undotree'
 nnoremap <Leader>u :UndotreeToggle<CR>
 
+" Linter
+Plug 'dense-analysis/ale'
+
 call plug#end()
 
 " Tab properties
