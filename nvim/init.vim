@@ -90,7 +90,7 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
-" Run a given vim command on the results of alt from a given path.
+" Run a alt command from a given path to return the test file.
 function! AltCommand(path, vim_command)
   let l:alternate = system("alt " . a:path)
   if empty(l:alternate)
