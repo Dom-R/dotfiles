@@ -26,6 +26,9 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
 
 Plug 'janko-m/vim-test'
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>tn :TestNearest<CR>
+
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'justinmk/vim-sneak'
 
