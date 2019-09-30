@@ -20,6 +20,10 @@ Plug 'junegunn/fzf.vim'
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 
+" Plug 'liuchengxu/vim-clap'
+" nnoremap <Leader>f :Clap files<CR>
+" nnoremap <Leader>b :Clap buffers<CR>
+
 Plug 'tpope/vim-endwise'
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_on_save = 1
