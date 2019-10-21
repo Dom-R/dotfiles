@@ -15,7 +15,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
