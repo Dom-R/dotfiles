@@ -15,17 +15,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
 
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
-" nnoremap <Leader>f :Files<CR>
-" nnoremap <Leader>b :Buffers<CR>
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
-Plug 'liuchengxu/vim-clap'
-let g:clap_provider_grep_delay = 0
-let g:clap_provider_grep_blink = [0, 0]
-let g:clap_provider_grep_enable_icon = 0
-nnoremap <Leader>f :Clap files<CR>
-nnoremap <Leader>b :Clap buffers<CR>
+" Plug 'liuchengxu/vim-clap'
+" let g:clap_provider_grep_delay = 0
+" let g:clap_provider_grep_blink = [0, 0]
+" let g:clap_provider_grep_enable_icon = 0
+" nnoremap <Leader>f :Clap files<CR>
+" nnoremap <Leader>b :Clap buffers<CR>
 
 Plug 'tpope/vim-endwise'
 Plug 'ntpeters/vim-better-whitespace'
