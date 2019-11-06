@@ -10,7 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 
 " Closes NERDTree when it is the only window left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
@@ -86,12 +86,11 @@ syntax on
 set background=dark
 set termguicolors
 
-" Set up quantum as colorscheme in silent mode due to it not existing when
-" freshly installed
+" Set up quantum as colorscheme in silent mode due to fresh installs
 silent! colorscheme quantum
 
-" Enable esc to exit terminal inside terminal mode
-tnoremap <Esc> <C-\><C-n>
+" Enable esc to normal mode inside terminal mode with the exception of fzf
+autocmd TermOpen * if !exists("b:fzf") | tnoremap <buffer> <Esc> <C-\><C-n> | endif
 
 " Enable highlighting and previewing substitutions
 set inccommand=split
