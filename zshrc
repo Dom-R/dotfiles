@@ -10,9 +10,13 @@ zstyle :compinstall filename '/home/dominik/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Enable fzf
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+
+# Enable z
+export _Z_DATA=$HOME/.local/share/z/.z
+[ -f $HOME/.local/share/z/z.sh ] && source $HOME/.local/share/z/z.sh
 
 # Add rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
