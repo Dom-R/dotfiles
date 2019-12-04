@@ -14,9 +14,9 @@ compinit
 # Enable fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
-# Enable z
-export _Z_DATA=$HOME/.local/share/z/.z
-[ -f $HOME/.local/share/z/z.sh ] && source $HOME/.local/share/z/z.sh
+# Enable jump https://github.com/gsamokovarov/jump
+# AUR package: jump-bin
+eval "$(jump shell --bind=z)"
 
 # Add rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
