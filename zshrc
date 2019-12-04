@@ -18,11 +18,9 @@ compinit
 # AUR package: jump-bin
 eval "$(jump shell --bind=z)"
 
-# Add rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# Load rbenv automatically
-eval "$(rbenv init -)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # force fzf to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
