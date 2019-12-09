@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
+    install_pikaur_package
     configure_git
     git_aliases
     git_editor
@@ -30,6 +31,10 @@ function git_editor() {
 
 function symlink_neovim() {
     ln -s "$DOTFILES_REPO/init.vim" ~/.config/nvim/init.vim
+}
+
+function install_pikaur_package() {
+  pikaur -S --needed $(cat Pikaur)
 }
 
 main "$@"
