@@ -54,7 +54,7 @@ Plug 'machakann/vim-highlightedyank'
 
 " Code Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-python']
 " future extensions: coc-yank, coc-sql, coc-terminal, coc-docker
 
 " Add more text object to operate(|, [, {, etc)
