@@ -1,11 +1,14 @@
 alt
 docker
 fzf
+fd
 jq
 kitty
 neovim
+oh-my-zsh
 ripgrep
 tig
 tmux
 zsh
-jump-bin
+
+gsamokovarov/jump
