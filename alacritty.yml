@@ -1,0 +1,17 @@
+# Font configuration (changes require restart)
+font:
+  size: 14
+  # The normal (roman) font face to use.
+  normal:
+    family: undefined
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: undefined
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: undefined
+    style: Italic
