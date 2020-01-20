@@ -61,6 +61,17 @@ bindswitch --reload lid:off output $laptop enable
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+
+### Mouse configuration
+#
+# Mouse Warping:
+# mouse_warping output|container|none
+mouse_warping none
+#
+# Change focus by moving the mouse
+focus_follows_mouse no
+
+
 ### Key bindings
 #
 # Basics:
