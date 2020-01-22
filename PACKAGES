@@ -1,4 +1,3 @@
-alt
 docker
 fzf
 fd
@@ -11,4 +10,5 @@ tig
 tmux
 zsh
 
+uptech/alt
 gsamokovarov/jump
