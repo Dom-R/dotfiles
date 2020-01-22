@@ -33,6 +33,11 @@ set $laptop eDP-1
 bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
+### Windows Configurations
+# Gaps
+gaps inner 5
+smart_gaps on
+
 ### Idle configuration
 #
 # Example configuration:
