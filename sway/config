@@ -60,7 +60,10 @@ bindswitch --reload lid:off output $laptop enable
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
+input "65261:4633:DZTECH_DZ60RGB" {
+    xkb_layout us
+    xkb_variant intl
+}
 
 ### Mouse configuration
 #
