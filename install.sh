@@ -9,6 +9,7 @@ main() {
     symlink_tmux_conf
     symlink_sway
     symlink_waybar
+    symlink_alacritty
 }
 
 DOTFILES_REPO=~/.dotfiles
@@ -50,6 +51,10 @@ function symlink_sway() {
 
 function symlink_waybar() {
   cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
+}
+
+function symlink_alacritty() {
+  cp -fprs "$DOTFILES_REPO/alacritty/" ~/.config/alacritty/
 }
 
 main "$@"
