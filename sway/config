@@ -19,7 +19,7 @@ set $term alacritty
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # Wallpaper path
-set $wallpaper_path /home/dominik/Pictures/wallpaper.jpg
+set $wallpaper_path /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 ### Output configuration
 #
