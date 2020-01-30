@@ -5,6 +5,10 @@ main() {
     git_aliases
     git_editor
     symlink_neovim
+    symlink_zshrc
+    symlink_tmux_conf
+    symlink_sway
+    symlink_waybar
 }
 
 DOTFILES_REPO=~/.dotfiles
@@ -29,7 +33,23 @@ function git_editor() {
 }
 
 function symlink_neovim() {
-    ln -s "$DOTFILES_REPO/init.vim" ~/.config/nvim/init.vim
+    ln -fs "$DOTFILES_REPO/init.vim" ~/.config/nvim/init.vim
+}
+
+function symlink_zshrc() {
+    ln -fs "$DOTFILES_REPO/zshrc" ~/.zshrc
+}
+
+function symlink_tmux_conf() {
+    ln -fs "$DOTFILES_REPO/tmux.conf" ~/.tmux.conf
+}
+
+function symlink_sway() {
+  cp -fprs "$DOTFILES_REPO/sway/" ~/.config/sway/
+}
+
+function symlink_waybar() {
+  cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
 }
 
 main "$@"
