@@ -171,7 +171,7 @@ focus_follows_mouse no
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -232,6 +232,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+#
+# Screenshot
+#
+    bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Status Bar:
