@@ -61,7 +61,7 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "Battery {capacity}%"
+		"format": "Battery {capacity:3}%"
 	},
 	"disk": {
 		"interval": 5,
