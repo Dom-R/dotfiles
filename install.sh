@@ -34,7 +34,7 @@ function git_editor() {
 }
 
 function symlink_neovim() {
-    ln -fs "$DOTFILES_REPO/init.vim" ~/.config/nvim/init.vim
+    cp -fprs "$DOTFILES_REPO/nvim/" ~/.config/nvim/
 }
 
 function symlink_zshrc() {
