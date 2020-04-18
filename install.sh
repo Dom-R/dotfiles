@@ -46,15 +46,15 @@ function symlink_tmux_conf() {
 }
 
 function symlink_sway() {
-  cp -fprs "$DOTFILES_REPO/sway/" ~/.config/sway/
+    cp -fprs "$DOTFILES_REPO/sway/" ~/.config/sway/
 }
 
 function symlink_waybar() {
-  cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
+    cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
 }
 
 function symlink_alacritty() {
-  cp -fprs "$DOTFILES_REPO/alacritty/" ~/.config/alacritty/
+    cp -fprs "$DOTFILES_REPO/alacritty/" ~/.config/alacritty/
 }
 
 main "$@"
