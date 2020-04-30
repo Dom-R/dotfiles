@@ -1,11 +1,12 @@
 docker
-fzf
 fd
+fzf
 jq
 kitty
 neovim
 oh-my-zsh
 ripgrep
+rvm
 tig
 tmux
 zsh
