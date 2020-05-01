@@ -21,7 +21,7 @@ ZSH_TMUX_AUTOSTART=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git tmux fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,9 +33,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Enable fzf
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # Enable jump https://github.com/gsamokovarov/jump
 # AUR package: jump-bin
