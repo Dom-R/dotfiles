@@ -74,7 +74,7 @@ smart_gaps on
 
 input "*" {
     xkb_layout us
-    xkb_variant alt-intl
+    # xkb_variant alt-intl
     xkb_options caps:escape
 }
 
