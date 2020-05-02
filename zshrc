@@ -27,13 +27,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Enable jump https://github.com/gsamokovarov/jump
 # AUR package: jump-bin
 eval "$(jump shell --bind=z)"
