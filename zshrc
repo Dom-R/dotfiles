@@ -36,3 +36,6 @@ eval "$(jump shell --bind=z)"
 
 # force fzf to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# fd alias for ubuntu
+alias fd=fdfind
