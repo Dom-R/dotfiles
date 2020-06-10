@@ -35,7 +35,7 @@ function git_editor() {
 }
 
 function symlink_neovim() {
-    cp -fprs "$DOTFILES_REPO/nvim/" ~/.config/nvim/
+    cp -fprsT "$DOTFILES_REPO/nvim" ~/.config/nvim/
 }
 
 function symlink_zshrc() {
@@ -47,19 +47,19 @@ function symlink_tmux_conf() {
 }
 
 function symlink_sway() {
-    cp -fprs "$DOTFILES_REPO/sway/" ~/.config/sway/
+    cp -fprsT "$DOTFILES_REPO/sway/" ~/.config/sway/
 }
 
 function symlink_waybar() {
-    cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
+    cp -fprsT "$DOTFILES_REPO/waybar/" ~/.config/waybar/
 }
 
 function symlink_rofi() {
-    cp -fprs "$DOTFILES_REPO/rofi/" ~/.config/rofi/
+    cp -fprsT "$DOTFILES_REPO/rofi/" ~/.config/rofi/
 }
 
 function symlink_alacritty() {
-    cp -fprs "$DOTFILES_REPO/alacritty/" ~/.config/alacritty/
+    cp -fprsT "$DOTFILES_REPO/alacritty/" ~/.config/alacritty/
 }
 
 main "$@"
