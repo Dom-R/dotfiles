@@ -9,6 +9,7 @@ main() {
     symlink_tmux_conf
     symlink_sway
     symlink_waybar
+    symlink_rofi
     symlink_alacritty
 }
 
@@ -51,6 +52,10 @@ function symlink_sway() {
 
 function symlink_waybar() {
     cp -fprs "$DOTFILES_REPO/waybar/" ~/.config/waybar/
+}
+
+function symlink_rofi() {
+    cp -fprs "$DOTFILES_REPO/rofi/" ~/.config/rofi/
 }
 
 function symlink_alacritty() {
