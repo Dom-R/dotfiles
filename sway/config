@@ -19,7 +19,7 @@ set $term alacritty
 # Note: it's recommended that you pass the final command to sway
 set $menu "rofi -combi-modi window,drun,ssh -show combi -show-icons -theme slate"
 # Wallpaper path
-set $wallpaper_path /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+set $wallpaper_path ~/.dotfiles/wallpaper.jpg
 
 ### Output configuration
 #
