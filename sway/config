@@ -117,7 +117,7 @@ focus_follows_mouse no
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     # Sway lock
-    bindsym $mod+Shift+Delete exec swaylock --color 000000 --indicator-idle-visible --font undefined --indicator-caps-lock # --image $wallpaper_path
+    bindsym $mod+Shift+Delete exec swaylock --daemonize --ignore-empty-password --indicator-caps-lock --indicator-radius 170 --image ~/.dotfiles/images/lockscreen.png
 #
 # Moving around:
 #
