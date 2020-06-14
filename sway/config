@@ -18,15 +18,13 @@ set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu "rofi -combi-modi window,drun,ssh -show combi -show-icons -theme slate"
-# Wallpaper path
-set $wallpaper_path ~/.dotfiles/images/wallpaper.jpg
 # Swaylock Settings
 set $swaylock_settings 'swaylock --daemonize --ignore-empty-password --indicator-caps-lock --indicator-radius 170 --image ~/.dotfiles/images/lockscreen.png'
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $wallpaper_path fill
+output * bg ~/.dotfiles/images/wallpaper.jpg fill
 #
 # Example configuration:
 #
