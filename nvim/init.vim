@@ -87,7 +87,7 @@ set background=dark
 set termguicolors
 
 " Set up quantum as colorscheme in silent mode due to fresh installs
-silent! colorscheme quantum
+silent colorscheme quantum
 
 " Enable esc to normal mode inside terminal mode with the exception of fzf
 autocmd TermOpen * if !exists("b:fzf") | tnoremap <buffer> <Esc> <C-\><C-n> | endif
