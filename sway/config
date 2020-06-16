@@ -39,7 +39,8 @@ output HDMI-A-2 disable
 ### Windows Configurations
 # Gaps
 gaps inner 5
-smart_gaps on
+
+default_border none
 
 ### Idle configuration
 #
