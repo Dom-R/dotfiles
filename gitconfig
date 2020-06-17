@@ -1,0 +1,10 @@
+[user]
+  name = Dominik Reller
+  email = Dom-R@users.noreply.github.com
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+[core]
+  editor = nvim
