@@ -8,3 +8,5 @@
   st = status
 [core]
   editor = nvim
+[commit]
+  template = ~/.dotfiles/gitmessage
