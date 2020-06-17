@@ -67,6 +67,8 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 " Linter
 Plug 'dense-analysis/ale'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " Tab properties
