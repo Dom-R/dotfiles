@@ -49,9 +49,6 @@ let g:quantum_black = 1
 Plug 'itchyny/lightline.vim'
 let g:lightline = {'colorscheme': 'quantum'}
 
-" Highligh yanks
-Plug 'machakann/vim-highlightedyank'
-
 " Code Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-python']
@@ -140,3 +137,9 @@ if !empty($WAYLAND_DISPLAY)
         \   'cache_enabled': 1,
         \ }
 endif
+
+" Highligh yanks. :help lua.highlight
+augroup HighlightYank
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
