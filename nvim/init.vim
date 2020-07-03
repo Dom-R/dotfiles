@@ -12,6 +12,8 @@ Plug 'scrooloose/nerdtree'
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
 
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
 " Closes NERDTree when it is the only window left open
 augroup CloseNERDTreeIfOnlyBuffer
   autocmd!
