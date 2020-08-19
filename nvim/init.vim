@@ -73,6 +73,7 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 Plug 'dense-analysis/ale'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 call plug#end()
 
