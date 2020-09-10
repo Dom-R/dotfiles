@@ -25,6 +25,9 @@ Plug 'junegunn/fzf.vim'
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 
+" fzf in window mode
+let g:fzf_layout = { 'window': { 'width': 0.9 , 'height': 0.8 } }
+
 " Plug 'liuchengxu/vim-clap'
 " let g:clap_provider_grep_delay = 0
 " let g:clap_provider_grep_blink = [0, 0]
