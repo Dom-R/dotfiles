@@ -62,6 +62,8 @@ Plug 'neovim/nvim-lsp'
 " Code Completion
 Plug 'nvim-lua/completion-nvim'
 set completeopt=menuone,noinsert,noselect,preview
+" Fix for vim-endwise
+let g:completion_confirm_key = "\<C-y>"
 
 " Add more text object to operate(|, [, {, etc)
 Plug 'wellle/targets.vim'
