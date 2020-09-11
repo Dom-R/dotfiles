@@ -8,12 +8,9 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
-
 " Show hidden files in NERDtree
 let NERDTreeShowHidden=1
-
 nnoremap <Leader>n :NERDTreeToggle<CR>
-
 " Closes NERDTree when it is the only window left open
 augroup CloseNERDTreeIfOnlyBuffer
   autocmd!
@@ -24,7 +21,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
-
 " fzf in window mode
 let g:fzf_layout = { 'window': { 'width': 0.9 , 'height': 0.8 } }
 
