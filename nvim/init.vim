@@ -60,10 +60,12 @@ let g:lightline = {'colorscheme': 'quantum'}
 " Highligh yanks
 Plug 'machakann/vim-highlightedyank'
 
+" Language Server Protocol
+Plug 'neovim/nvim-lsp'
+
 " Code Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-solargraph', 'coc-pairs', 'coc-python']
-" future extensions: coc-yank, coc-sql, coc-terminal, coc-docker
+Plug 'nvim-lua/completion-nvim'
+set completeopt=menuone,noinsert,noselect,preview
 
 " Add more text object to operate(|, [, {, etc)
 Plug 'wellle/targets.vim'
@@ -78,7 +80,17 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
+" WIP Tree Sitter Integration
+"Plug 'nvim-treesitter/nvim-treesitter'
+
 call plug#end()
+
+lua << EOF
+  local on_attach = function()
+    require'completion'.on_attach()
+  end
+  require'nvim_lsp'.solargraph.setup{on_attach=on_attach}
+EOF
 
 " Tab properties
 set softtabstop=0 expandtab shiftwidth=2 smarttab
