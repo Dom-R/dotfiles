@@ -2,7 +2,7 @@ docker
 fd
 fzf
 jq
-kitty
+alacritty
 neovim
 oh-my-zsh
 ripgrep
