@@ -87,7 +87,7 @@ lua << EOF
   local on_attach = function()
     require'completion'.on_attach()
   end
-  require'nvim_lsp'.solargraph.setup{on_attach=on_attach}
+  require'lspconfig'.solargraph.setup{on_attach=on_attach}
 EOF
 
 " Tab properties
