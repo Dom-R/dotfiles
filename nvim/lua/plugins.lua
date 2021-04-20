@@ -52,4 +52,17 @@ return require('packer').startup(function()
   -- quantum theme
   use 'tyrannicaltoucan/vim-quantum'
   g['quantum_black'] = 1
+
+  -- indent lines
+  --use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+  --
+
+  use 'nacro90/numb.nvim'
+  require('numb').setup()
+
+  use 'kyazdani42/nvim-tree.lua'
+  g['nvim_tree_show_icons'] = { git = 1, folders = 0, files = 0 }
+  g['nvim_tree_disable_netrw'] = 0
+  g['nvim_tree_auto_close'] = 1
+  map('n', '<leader>n', ':NvimTreeToggle<cr>')
 end)

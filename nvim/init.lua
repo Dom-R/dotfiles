@@ -22,7 +22,6 @@ opt('b', 'expandtab', true)                           -- Use spaces instead of t
 opt('b', 'shiftwidth', indent)                        -- Size of an indent
 opt('b', 'smartindent', true)                         -- Insert indents automatically
 opt('b', 'tabstop', indent)                           -- Number of spaces tabs count for
-opt('o', 'completeopt', 'menuone,noinsert,noselect')  -- Completion options (for deoplete)
 opt('o', 'hidden', true)                              -- Enable modified buffers in background
 opt('o', 'ignorecase', true)                          -- Ignore case
 opt('o', 'inccommand', 'split')                       -- Enable highlight and preview when substituting
@@ -35,7 +34,7 @@ opt('o', 'splitbelow', true)                          -- Put new windows below c
 opt('o', 'splitright', true)                          -- Put new windows right of current
 opt('o', 'termguicolors', true)                       -- True color support
 opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode
-opt('w', 'list', true)                                -- Show some invisible characters (tabs...)
+opt('w', 'list', false)                                -- Show some invisible characters (tabs...)
 opt('w', 'number', true)                              -- Print line number
 opt('w', 'wrap', false)                               -- Disable line wrap
 
