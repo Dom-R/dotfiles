@@ -5,9 +5,9 @@ main() {
     symlink_neovim
     symlink_zshrc
     symlink_tmux_conf
-    symlink_sway
-    symlink_waybar
-    symlink_rofi
+#    symlink_sway
+#    symlink_waybar
+#    symlink_rofi
     symlink_alacritty
 }
 
