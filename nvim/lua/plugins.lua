@@ -57,9 +57,11 @@ return require('packer').startup(function()
   --use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
   --
 
+  -- preview lines before jumping with :<number>
   use 'nacro90/numb.nvim'
   require('numb').setup()
 
+  -- undo tree
   use 'kyazdani42/nvim-tree.lua'
   g['nvim_tree_show_icons'] = { git = 1, folders = 0, files = 0 }
   g['nvim_tree_disable_netrw'] = 0

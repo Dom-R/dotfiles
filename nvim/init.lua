@@ -35,7 +35,8 @@ opt('o', 'splitright', true)                          -- Put new windows right o
 opt('o', 'termguicolors', true)                       -- True color support
 opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode
 opt('w', 'list', false)                                -- Show some invisible characters (tabs...)
-opt('w', 'number', true)                              -- Print line number
+opt('w', 'number', true)                              -- Line number
+opt('w', 'relativenumber', true)                      -- Relative line numbers
 opt('w', 'wrap', false)                               -- Disable line wrap
 
 -- highlight yank
