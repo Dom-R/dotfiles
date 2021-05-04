@@ -21,7 +21,7 @@ ZSH_TMUX_AUTOSTART=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux fzf)
+plugins=(git tmux fzf asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,11 +31,10 @@ source $ZSH/oh-my-zsh.sh
 # AUR package: jump-bin
 eval "$(jump shell --bind=z)"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # force fzf to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # fd alias for ubuntu
 alias fd=fdfind
+
+export EDITOR=nvim
