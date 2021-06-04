@@ -1,12 +1,7 @@
 -- helper functions
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
-
-local function opt(scope, key, value)
-  scopes[scope][key] = value
-  if scope ~= 'o' then scopes['o'][key] = value end
-end
+local opt = vim.opt
 
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
@@ -17,27 +12,28 @@ end
 require('plugins')
 
 local indent = 2
-cmd 'colorscheme quantum'                             -- Put your favorite colorscheme here
-opt('b', 'expandtab', true)                           -- Use spaces instead of tabs
-opt('b', 'shiftwidth', indent)                        -- Size of an indent
-opt('b', 'smartindent', true)                         -- Insert indents automatically
-opt('b', 'tabstop', indent)                           -- Number of spaces tabs count for
-opt('o', 'hidden', true)                              -- Enable modified buffers in background
-opt('o', 'ignorecase', true)                          -- Ignore case
-opt('o', 'inccommand', 'split')                       -- Enable highlight and preview when substituting
-opt('o', 'joinspaces', false)                         -- No double spaces with join after a dot
-opt('o', 'scrolloff', 4 )                             -- Lines of context
-opt('o', 'shiftround', true)                          -- Round indent
-opt('o', 'sidescrolloff', 8 )                         -- Columns of context
-opt('o', 'smartcase', true)                           -- Don't ignore case with capitals
-opt('o', 'splitbelow', true)                          -- Put new windows below current
-opt('o', 'splitright', true)                          -- Put new windows right of current
-opt('o', 'termguicolors', true)                       -- True color support
-opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode
-opt('w', 'list', false)                                -- Show some invisible characters (tabs...)
-opt('w', 'number', true)                              -- Line number
-opt('w', 'relativenumber', true)                      -- Relative line numbers
-opt('w', 'wrap', false)                               -- Disable line wrap
+cmd 'colorscheme quantum'                          -- Put your favorite colorscheme here
+opt.expandtab = true                           -- Use spaces instead of tabs
+opt.shiftwidth = indent                        -- Size of an indent
+opt.smartindent = true                         -- Insert indents automatically
+opt.tabstop = indent                           -- Number of spaces tabs count for
+opt.hidden = true                              -- Enable modified buffers in background
+opt.ignorecase = true                          -- Ignore case
+opt.inccommand = 'split'                       -- Enable highlight and preview when substituting
+opt.joinspaces = false                         -- No double spaces with join after a dot
+opt.scrolloff = 4                              -- Lines of context
+opt.shiftround = true                          -- Round indent
+opt.sidescrolloff = 8                          -- Columns of context
+opt.smartcase = true                           -- Don't ignore case with capitals
+opt.splitbelow = true                          -- Put new windows below current
+opt.splitright = true                          -- Put new windows right of current
+opt.termguicolors = true                       -- True color support
+opt.wildmode = 'list:longest'                  -- Command-line completion mode
+opt.list = false                               -- Show some invisible characters (tabs...)
+opt.number = true                              -- Line number
+opt.relativenumber = true                      -- Relative line numbers
+opt.wrap = false                               -- Disable line wrap
+opt.showmode = false                           -- Disable showing the mode on cmd area
 
 -- highlight yank
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = true}'
