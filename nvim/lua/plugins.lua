@@ -79,4 +79,13 @@ return require('packer').startup(function()
   g['nvim_tree_disable_netrw'] = 0
   g['nvim_tree_auto_close'] = 1
   map('n', '<leader>n', ':NvimTreeToggle<cr>')
+
+  -- tree-sitter
+  -- to install languages use :TSInstall
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  require'nvim-treesitter.configs'.setup {
+    highlight = {
+      enable = true,
+    },
+  }
 end)

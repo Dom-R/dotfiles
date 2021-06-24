@@ -34,6 +34,7 @@ opt.number = true                              -- Line number
 opt.relativenumber = true                      -- Relative line numbers
 opt.wrap = false                               -- Disable line wrap
 opt.showmode = false                           -- Disable showing the mode on cmd area
+opt.foldexpr='nvim_treesitter#foldexpr()'      -- Tree-sitter based folding
 
 -- highlight yank
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = true}'
