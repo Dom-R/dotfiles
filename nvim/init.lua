@@ -50,3 +50,6 @@ map('v', '<Leader>y', '"+y')
 map('n', '<Leader>yy', '"+yy')
 map('n', '<Leader>p', '"+p')
 map('v', '<Leader>p', '"+p')
+
+-- exit terminal mode with esc
+map('t', '<Esc>', '<C-\\><C-n>')
