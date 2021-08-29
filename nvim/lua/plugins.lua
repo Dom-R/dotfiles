@@ -34,6 +34,16 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
+  require('telescope').setup {
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-Down>"] = require('telescope.actions').cycle_history_next,
+          ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+        },
+      },
+    }
+  }
   --map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
   map('n', '<leader>f', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }})<cr>")
   map('n', '<leader>g', '<cmd>Telescope live_grep<cr>')
