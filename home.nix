@@ -11,9 +11,17 @@
 
   programs.zsh = {
     enable = true;
+    history = {
+      path = "/home/dominik/.local/share/zsh/zsh_history";
+      ignoreSpace = true;
+    };
+    initExtra = ''
+     setopt HIST_IGNORE_ALL_DUPS
+     setopt HIST_SAVE_NO_DUPS 
+    '';
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ "git" "tmux" "asdf" ];
       theme = "robbyrussell";
     };
   };
@@ -21,7 +29,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font.size = 16; 
+      font.size = 16;
       key_bindings = [
         {
 	  key = "Insert";
@@ -47,6 +55,21 @@
       core.editor = "nvim";
       commit.template = "~/.dotfiles/gitmessage";
     };
+  };
+
+  programs.tmux = {
+    enable = true;
+#    historyLimit = 5000;
+#    escapeTime = 10;
+#    keyMode = "vi";
+#    extraConfig = ''
+#      set -as terminal-features ",alacritty*:RGB"
+#      set-option -g focus-events on
+#    '';
+  };
+
+  home.file = {
+    ".tmux.conf".source = ./tmux.conf;
   };
 
   # This value determines the Home Manager release that your
