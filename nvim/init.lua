@@ -12,7 +12,7 @@ end
 require('plugins')
 
 local indent = 2
-cmd 'colorscheme quantum'                          -- Put your favorite colorscheme here
+cmd 'colorscheme catppuccino'                  -- Put your favorite colorscheme here
 opt.expandtab = true                           -- Use spaces instead of tabs
 opt.shiftwidth = indent                        -- Size of an indent
 opt.smartindent = true                         -- Insert indents automatically

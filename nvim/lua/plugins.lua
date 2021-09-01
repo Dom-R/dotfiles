@@ -72,9 +72,10 @@ return require('packer').startup(function()
   use 'itchyny/lightline.vim'
   g['lightline'] = { colorscheme = 'quantum' }
 
-  -- quantum theme
+  -- catppuccino theme
+  use "pocco81/catppuccino.nvim"
   use 'tyrannicaltoucan/vim-quantum'
-  g['quantum_black'] = 1
+  --g['quantum_black'] = 1
 
   -- indent lines
   --use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
