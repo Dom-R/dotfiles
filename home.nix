@@ -18,12 +18,14 @@
     initExtra = ''
      setopt HIST_IGNORE_ALL_DUPS
      setopt HIST_SAVE_NO_DUPS 
+     eval "$(jump shell zsh --bind=z)"
     '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "tmux" "asdf" ];
       theme = "robbyrussell";
     };
+    envExtra = "ZSH_TMUX_AUTOSTART=true";
   };
 
   programs.alacritty = {
