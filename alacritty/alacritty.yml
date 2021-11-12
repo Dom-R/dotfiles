@@ -1,5 +1,7 @@
 font:
   size: 14
+  normal:
+    family: Roboto Mono
 
 key_bindings:
   # Disable sending 5~ when copying text
