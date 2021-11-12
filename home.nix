@@ -34,10 +34,10 @@
       font.size = 16;
       key_bindings = [
         {
-	  key = "Insert";
-	  mods = "Control";
-	  action = "None";
-	}
+          key = "Insert";
+          mods = "Control";
+          action = "None";
+        }
       ];
     };
   };
@@ -73,6 +73,18 @@
   home.file = {
     ".tmux.conf".source = ./tmux.conf;
   };
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-nightly;
+  };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
