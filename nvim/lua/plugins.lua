@@ -59,15 +59,22 @@ return require('packer').startup(function()
   -- linter
   use 'dense-analysis/ale'
 
-  -- status line
-  use 'itchyny/lightline.vim'
-  g['lightline'] = { colorscheme = 'quantum' }
-
   -- catppuccino theme
   --use 'catppuccin/nvim'
   --require('catppuccin').setup()
   use 'tyrannicaltoucan/vim-quantum'
   g['quantum_black'] = 1
+
+  -- status line
+  use 'nvim-lualine/lualine.nvim'
+  require('lualine').setup {
+    options = {
+      theme = "jellybeans",
+      section_separators = '',
+      component_separators = '',
+      icons_enabled = false
+    }
+  }
 
   -- indent lines
   --use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
