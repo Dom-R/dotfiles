@@ -27,9 +27,7 @@ return require('packer').startup(function()
   -- packer manages itself
   use {'wbthomason/packer.nvim', opt = true}
 
-  -- nerdtree
-  --use 'scrooloose/nerdtree'
-  --map('n', '<leader>n', ':NERDTreeToggle<cr>')
+  -- telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -49,13 +47,6 @@ return require('packer').startup(function()
   map('n', '<leader>g', '<cmd>Telescope live_grep<cr>')
   map('n', '<leader>b', '<cmd>Telescope buffers<cr>')
   map('n', '<leader>h', '<cmd>Telescope help_tags<cr>')
-
-  -- fzf
-  --use { 'junegunn/fzf', run = function() fn['fzf#install']() end }
-  --use 'junegunn/fzf.vim'
-  --g['fzf_layout'] = { window = { width = 0.9 , height = 0.8 } }
-  --map('n', '<leader>f', ':Files<cr>')
-  --map('n', '<leader>b', ':Buffers<cr>')
 
   -- undo tree
   use 'mbbill/undotree'
@@ -86,7 +77,7 @@ return require('packer').startup(function()
   use 'nacro90/numb.nvim'
   require('numb').setup()
 
-  -- undo tree
+  -- file tree
   use 'kyazdani42/nvim-tree.lua'
   g['nvim_tree_show_icons'] = { git = 1, folders = 0, files = 0 }
   require'nvim-tree'.setup {
