@@ -77,8 +77,13 @@ return require('packer').startup(function()
   }
 
   -- indent lines
-  --use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-  --
+  use 'lukas-reineke/indent-blankline.nvim'
+  require("indent_blankline").setup {
+    char = "",
+    context_char = "⋅",
+    show_current_context = true,
+    show_current_context_start = true,
+  }
 
   -- preview lines before jumping with :<number>
   use 'nacro90/numb.nvim'
