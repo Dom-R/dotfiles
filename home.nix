@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  pkgsUnstable = import <nixpkgs-unstable> {};
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -73,6 +76,17 @@
   home.file = {
     ".tmux.conf".source = ./tmux.conf;
   };
+
+  home.packages = [
+    pkgsUnstable.aws-vault
+    pkgsUnstable.awscli2
+    pkgsUnstable.insomnia
+    pkgsUnstable.kubectl
+    pkgsUnstable.neovim
+    pkgsUnstable.slack
+    pkgsUnstable.spotify
+    pkgsUnstable.zoom-us
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
