@@ -61,30 +61,18 @@
 
   programs.tmux = {
     enable = true;
-#    historyLimit = 5000;
-#    escapeTime = 10;
-#    keyMode = "vi";
-#    extraConfig = ''
-#      set -as terminal-features ",alacritty*:RGB"
-#      set-option -g focus-events on
-#    '';
+     #historyLimit = 5000;
+     #escapeTime = 10;
+     #keyMode = "vi";
+     #extraConfig = ''
+     #  set -as terminal-features ",alacritty*:RGB"
+     #  set-option -g focus-events on
+     #'';
   };
 
   home.file = {
     ".tmux.conf".source = ./tmux.conf;
   };
-
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
-  programs.neovim = {
-    enable = true;
-    package = pkgs.neovim-nightly;
-  };
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
