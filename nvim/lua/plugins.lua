@@ -110,7 +110,7 @@ return require('packer').startup(function()
   map('n', '<leader>n', ':NvimTreeToggle<cr>')
 
   -- tree-sitter
-  -- to install languages use :TSInstall
+  -- to install languages use :TSInstall <lang>
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   require'nvim-treesitter.configs'.setup {
     highlight = {
