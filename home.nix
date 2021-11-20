@@ -77,6 +77,10 @@ in
     ".tmux.conf".source = ./tmux.conf;
   };
 
+  programs.firefox = {
+    enable = true;
+  };
+
   home.packages = [
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
