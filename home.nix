@@ -28,7 +28,10 @@ in
       plugins = [ "git" "tmux" "asdf" ];
       theme = "robbyrussell";
     };
-    envExtra = "ZSH_TMUX_AUTOSTART=true";
+    envExtra = ''
+      ZSH_TMUX_AUTOSTART=true
+      EDITOR=nvim
+    '';
   };
 
   programs.alacritty = {
