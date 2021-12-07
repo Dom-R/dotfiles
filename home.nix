@@ -25,7 +25,7 @@ in
     '';
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "tmux" "asdf" ];
+      plugins = [ "git" "tmux" ];
       theme = "robbyrussell";
     };
     envExtra = ''
@@ -85,6 +85,7 @@ in
   };
 
   home.packages = [
+    pkgsUnstable.alacritty
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
     pkgsUnstable.insomnia
@@ -93,6 +94,7 @@ in
     pkgsUnstable.slack
     pkgsUnstable.spotify
     pkgsUnstable.zoom-us
+    pkgsUnstable.stretchly
   ];
 
   # This value determines the Home Manager release that your
