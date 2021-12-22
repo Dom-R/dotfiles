@@ -112,12 +112,10 @@
   environment.systemPackages = with pkgs; [
     # xcape
     # xorg.xmodmap
-    alacritty
     docker
     docker-compose
     fd
     fzf
-    gcc
     git
     jq
     jump
