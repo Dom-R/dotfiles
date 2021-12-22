@@ -11,10 +11,6 @@
       ./hardware-configuration.nix
     ];
 
-  # workarounds for autologin since these dependencies are not properly configured be default
-  systemd.services.display-manager.wants = [ "systemd-user-sessions.service" "multi-user.target" "network-online.target" ];
-  systemd.services.display-manager.after = [ "systemd-user-sessions.service" "multi-user.target" "network-online.target" ];
-
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
