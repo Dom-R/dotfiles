@@ -85,7 +85,6 @@ in
   };
 
   home.packages = [
-    pkgsUnstable.alacritty
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
     pkgsUnstable.insomnia
@@ -93,8 +92,9 @@ in
     pkgsUnstable.neovim
     pkgsUnstable.slack
     pkgsUnstable.spotify
-    pkgsUnstable.zoom-us
     pkgsUnstable.stretchly
+    pkgsUnstable.vlc
+    pkgsUnstable.zoom-us
   ];
 
   # This value determines the Home Manager release that your
