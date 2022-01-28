@@ -1,9 +1,7 @@
 -- install packer if not installed
 local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
   execute 'packadd packer.nvim'
@@ -11,7 +9,6 @@ end
 
 -- helpers
 local g = vim.g      -- a table to access global variables
-
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
   if opts then options = vim.tbl_extend('force', options, opts) end
@@ -60,8 +57,8 @@ return require('packer').startup(function()
   use 'dense-analysis/ale'
 
   -- catppuccino theme
-  --use 'catppuccin/nvim'
-  --require('catppuccin').setup()
+  --use { 'catppuccin/nvim', as = "catppuccin" }
+  --require('catppuccin').setup({ transparent_background = true, term_colors = true })
   use 'tyrannicaltoucan/vim-quantum'
   g['quantum_black'] = 1
 
@@ -76,7 +73,7 @@ return require('packer').startup(function()
     }
   }
 
-  -- indent lines
+  -- indentation visualizer
   use 'lukas-reineke/indent-blankline.nvim'
   require("indent_blankline").setup {
     char = "",
@@ -115,6 +112,13 @@ return require('packer').startup(function()
   require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,
-    },
+      additional_vim_regex_highlighting = false
+    }
   }
+
+  -- Automatically set up configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
