@@ -84,12 +84,19 @@ in
     enable = true;
   };
 
+  # Adds neovim nightly to pkgs
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   home.packages = [
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
     pkgsUnstable.insomnia
     pkgsUnstable.kubectl
-    pkgsUnstable.neovim
+    pkgs.neovim-nightly
     pkgsUnstable.slack
     pkgsUnstable.spotify
     pkgsUnstable.stretchly

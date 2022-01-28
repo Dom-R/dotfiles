@@ -9,11 +9,7 @@ end
 
 -- helpers
 local g = vim.g      -- a table to access global variables
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
 -- Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
@@ -40,7 +36,7 @@ return require('packer').startup(function()
     }
   }
   --map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
-  map('n', '<leader>f', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }})<cr>")
+  map('n', '<leader>f', function() require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }}) end)
   map('n', '<leader>g', '<cmd>Telescope live_grep<cr>')
   map('n', '<leader>b', '<cmd>Telescope buffers<cr>')
   map('n', '<leader>h', '<cmd>Telescope help_tags<cr>')

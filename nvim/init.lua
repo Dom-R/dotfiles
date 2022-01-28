@@ -2,12 +2,7 @@
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local opt = vim.opt
-
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
 require('plugins')
 
@@ -34,6 +29,12 @@ opt.relativenumber = true                      -- Relative line numbers
 opt.wrap = false                               -- Disable line wrap
 opt.showmode = false                           -- Disable showing the mode on cmd area
 opt.foldexpr='nvim_treesitter#foldexpr()'      -- Tree-sitter based folding
+
+-- experimental filetype detection
+-- https://redd.it/rvwsl3
+local g = vim.g
+g['do_filetype_lua'] = 1
+g['did_load_filetypes'] = 0
 
 -- highlight yank
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = true}'
