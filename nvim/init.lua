@@ -3,6 +3,7 @@ local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local opt = vim.opt
 local map = vim.keymap.set
+local autocmd = vim.api.nvim_create_autocmd
 
 require('plugins')
 
@@ -37,7 +38,7 @@ g['do_filetype_lua'] = 1
 g['did_load_filetypes'] = 0
 
 -- highlight yank
-cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = true}'
+autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 
 -- Saving keystrokes when moving between splits
 map('n', '<C-j>', '<C-w><C-j>')
