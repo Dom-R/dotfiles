@@ -62,6 +62,7 @@ in
     extraConfig = {
       core.editor = "nvim";
       commit.template = "~/.dotfiles/gitmessage";
+      diff.external = "difft";
     };
   };
 
@@ -102,6 +103,7 @@ in
     pkgsUnstable.stretchly
     pkgsUnstable.vlc
     pkgsUnstable.zoom-us
+    pkgsUnstable.difftastic
   ];
 
   # This value determines the Home Manager release that your

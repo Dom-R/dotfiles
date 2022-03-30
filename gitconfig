@@ -11,3 +11,5 @@
   editor = nvim
 [commit]
   template = ~/.dotfiles/gitmessage
+[diff]
+  external = difft
