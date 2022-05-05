@@ -90,9 +90,8 @@ return require('packer').startup(function()
     hijack_netrw        = true,
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
-    auto_close          = true,
     open_on_tab         = false,
-    update_to_buf_dir   = {
+    hijack_directories  = {
       enable = true,
       auto_open = true,
     },
@@ -111,6 +110,26 @@ return require('packer').startup(function()
       additional_vim_regex_highlighting = false
     }
   }
+
+  -- fancy notifications
+  use 'rcarriga/nvim-notify'
+  vim.notify = require("notify")
+  vim.notify.setup({
+    background_colour = "Normal",
+    fps = 30,
+    icons = {
+      DEBUG = "",
+      ERROR = "",
+      INFO = "",
+      TRACE = "",
+      WARN = ""
+    },
+    level = "info",
+    minimum_width = 50,
+    render = "default",
+    stages = "static",
+    timeout = 5000
+  })
 
   -- Automatically set up configuration after cloning packer.nvim
   -- Put this at the end after all plugins
