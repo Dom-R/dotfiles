@@ -93,17 +93,21 @@ in
   ];
 
   home.packages = [
+    pkgs.neovim-nightly
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
+    pkgsUnstable.difftastic
+    pkgsUnstable.etcher
     pkgsUnstable.insomnia
+    pkgsUnstable.kube3d
     pkgsUnstable.kubectl
-    pkgs.neovim-nightly
+    pkgsUnstable.lens
     pkgsUnstable.slack
     pkgsUnstable.spotify
     pkgsUnstable.stretchly
+    pkgsUnstable.vale
     pkgsUnstable.vlc
     pkgsUnstable.zoom-us
-    pkgsUnstable.difftastic
   ];
 
   # This value determines the Home Manager release that your
