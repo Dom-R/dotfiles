@@ -23,7 +23,7 @@ return require('packer').startup(function()
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
   require('telescope').setup {
     defaults = {
@@ -36,7 +36,9 @@ return require('packer').startup(function()
     }
   }
   --map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
-  map('n', '<leader>f', function() require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }}) end)
+  map('n', '<leader>f', function()
+    require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }})
+  end)
   map('n', '<leader>g', '<cmd>Telescope live_grep<cr>')
   map('n', '<leader>b', '<cmd>Telescope buffers<cr>')
   map('n', '<leader>h', '<cmd>Telescope help_tags<cr>')
@@ -84,7 +86,6 @@ return require('packer').startup(function()
 
   -- file tree
   use 'kyazdani42/nvim-tree.lua'
-  g['nvim_tree_show_icons'] = { git = 1, folders = 0, files = 0 }
   require'nvim-tree'.setup {
     disable_netrw       = false,
     hijack_netrw        = true,
@@ -97,8 +98,16 @@ return require('packer').startup(function()
     },
     hijack_cursor       = false,
     update_cwd          = false,
+    renderer = {
+      icons = {
+        show = {
+          git = true,
+          folder = false,
+          file = false,
+        }
+      }
+    }
   }
-  g['nvim_tree_show_icons'] = { git = 1, folders = 0, files = 0 }
   map('n', '<leader>n', ':NvimTreeToggle<cr>')
 
   -- tree-sitter
