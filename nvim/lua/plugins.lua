@@ -116,6 +116,23 @@ return require('packer').startup(function()
       additional_vim_regex_highlighting = false
     }
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
+
+  -- automatic annotations/comments with :Neogen
+  use {
+    "danymat/neogen",
+    config = function()
+      require('neogen').setup {}
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
+
+  use 'rrethy/nvim-treesitter-endwise'
+  require('nvim-treesitter.configs').setup {
+    endwise = {
+      enable = true
+    }
+  }
 
   -- fancy notifications
   use 'rcarriga/nvim-notify'
@@ -133,9 +150,10 @@ return require('packer').startup(function()
     level = "info",
     minimum_width = 50,
     render = "default",
-    stages = "static",
+    stages = "slide",
     timeout = 5000
   })
+  require("telescope").load_extension("notify")
 
   -- Automatically set up configuration after cloning packer.nvim
   -- Put this at the end after all plugins
