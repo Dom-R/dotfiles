@@ -31,12 +31,6 @@ opt.wrap = false                               -- Disable line wrap
 opt.showmode = false                           -- Disable showing the mode on cmd area
 opt.foldexpr='nvim_treesitter#foldexpr()'      -- Tree-sitter based folding
 
--- experimental filetype detection
--- https://redd.it/rvwsl3
-local g = vim.g
-g['do_filetype_lua'] = 1
-g['did_load_filetypes'] = 0
-
 -- highlight yank
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 

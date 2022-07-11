@@ -51,9 +51,6 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
 
-  -- linter
-  use 'dense-analysis/ale'
-
   -- catppuccino theme
   --use { 'catppuccin/nvim', as = "catppuccin" }
   --require('catppuccin').setup({ transparent_background = true, term_colors = true })
