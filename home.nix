@@ -97,16 +97,19 @@ in
     pkgsUnstable.aws-vault
     pkgsUnstable.awscli2
     pkgsUnstable.difftastic
+    pkgsUnstable.dive
     pkgsUnstable.etcher
     pkgsUnstable.insomnia
+    pkgsUnstable.jump
+    pkgsUnstable.krita
     pkgsUnstable.kube3d
     pkgsUnstable.kubectl
     pkgsUnstable.lens
     pkgsUnstable.slack
     pkgsUnstable.spotify
-    pkgsUnstable.stretchly
+    pkgsUnstable.tig
     pkgsUnstable.vale
-    pkgsUnstable.vlc
+    pkgsUnstable.wezterm
     pkgsUnstable.zoom-us
   ];
 

@@ -108,6 +108,7 @@
     ]; # Enable ‘sudo’ for the user.
   };
 
+  # add thinkfan if necessary to control fan
   environment.systemPackages = with pkgs; [
     # xcape
     # xorg.xmodmap
@@ -117,10 +118,9 @@
     fzf
     git
     jq
-    jump
+    lm_sensors
     neovim
     ripgrep
-    tig
     tmux
     wget
     xclip
