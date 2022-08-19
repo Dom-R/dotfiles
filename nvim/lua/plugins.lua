@@ -51,9 +51,6 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
 
-  -- catppuccino theme
-  --use { 'catppuccin/nvim', as = "catppuccin" }
-  --require('catppuccin').setup({ transparent_background = true, term_colors = true })
   use 'tyrannicaltoucan/vim-quantum'
   g['quantum_black'] = 1
 
@@ -84,22 +81,18 @@ return require('packer').startup(function()
   -- file tree
   use 'kyazdani42/nvim-tree.lua'
   require'nvim-tree'.setup {
-    disable_netrw       = false,
-    hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
-    open_on_tab         = false,
     hijack_directories  = {
       enable = true,
       auto_open = true,
     },
-    hijack_cursor       = false,
-    update_cwd          = false,
+    hijack_cursor       = true,
     renderer = {
       icons = {
+        git_placement = "signcolumn",
         show = {
           git = true,
           folder = false,
+          folder_arrow = false,
           file = false,
         }
       }
@@ -154,6 +147,48 @@ return require('packer').startup(function()
     timeout = 5000
   })
   require("telescope").load_extension("notify")
+
+  -- visual f,F,t,T search
+  use {
+    'jinh0/eyeliner.nvim',
+    config = function()
+      require('eyeliner').setup {
+        highlight_on_key = true
+      }
+    end
+  }
+
+  --use {
+  --    "williamboman/mason.nvim",
+  --    "williamboman/mason-lspconfig.nvim",
+  --    "neovim/nvim-lspconfig",
+  --}
+  --require("mason").setup()
+  --require("mason-lspconfig").setup()
+  --require("lspconfig").solargraph.setup{}
+
+  -- linter
+  use 'jose-elias-alvarez/null-ls.nvim'
+  null_ls = require("null-ls")
+  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+  null_ls.setup({
+    sources = {
+      null_ls.builtins.formatting.trim_whitespace,
+      null_ls.builtins.diagnostics.trail_space
+    },
+    on_attach = function(client, bufnr)
+      if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end,
+        })
+      end
+    end,
+  })
 
   -- Automatically set up configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -8,7 +8,7 @@ local autocmd = vim.api.nvim_create_autocmd
 require('plugins')
 
 local indent = 2
-cmd 'colorscheme quantum'                   -- Put your favorite colorscheme here
+cmd 'colorscheme quantum'                      -- Put your favorite colorscheme here
 opt.expandtab = true                           -- Use spaces instead of tabs
 opt.shiftwidth = indent                        -- Size of an indent
 opt.smartindent = true                         -- Insert indents automatically
@@ -29,7 +29,7 @@ opt.number = true                              -- Line number
 opt.relativenumber = true                      -- Relative line numbers
 opt.wrap = false                               -- Disable line wrap
 opt.showmode = false                           -- Disable showing the mode on cmd area
-opt.foldexpr='nvim_treesitter#foldexpr()'      -- Tree-sitter based folding
+opt.foldexpr = 'nvim_treesitter#foldexpr()'    -- Tree-sitter based folding
 
 -- highlight yank
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
