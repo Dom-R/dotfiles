@@ -51,14 +51,35 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
 
-  use 'tyrannicaltoucan/vim-quantum'
-  g['quantum_black'] = 1
+  --use 'tyrannicaltoucan/vim-quantum'
+  --g['quantum_black'] = 1
+  use 'echasnovski/mini.nvim'
+  require('mini.base16').setup({
+    palette = {
+      base00 = '#212121',
+      base01 = '#212121',
+      base02 = '#474646',
+      base03 = '#6a6c6c',
+      base04 = '#b7bdc0',
+      base05 = '#b7bdc0',
+      base06 = '#ff00ff',
+      base07 = '#6a6c6c',
+      base08 = '#dd7186',
+      base09 = '#d7956e',
+      base0A = '#d5b875',
+      base0B = '#87bb7c',
+      base0C = '#6a6c6c',
+      base0D = '#70ace5',
+      base0E = '#a48add',
+      base0F = '#7681de',
+    },
+    plugins = { default = true }
+  })
 
   -- status line
   use 'nvim-lualine/lualine.nvim'
   require('lualine').setup {
     options = {
-      theme = "jellybeans",
       section_separators = '',
       component_separators = '',
       icons_enabled = false
