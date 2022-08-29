@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  pkgsUnstable = import <nixpkgs-unstable> {};
-in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -18,20 +15,23 @@ in
       path = "/home/dominik/.local/share/zsh/zsh_history";
       ignoreSpace = true;
     };
+    sessionVariables = {
+      EDITOR="nvim";
+      NIXPKGS_ALLOW_INSECURE=1;
+      NIXPKGS_ALLOW_UNFREE=1;
+      ZSH_TMUX_AUTOSTART=true;
+      AWS_VAULT_BACKEND="kwallet";
+    };
     initExtra = ''
-     setopt HIST_IGNORE_ALL_DUPS
-     setopt HIST_SAVE_NO_DUPS 
-     eval "$(jump shell zsh --bind=z)"
+      setopt HIST_IGNORE_ALL_DUPS
+      setopt HIST_SAVE_NO_DUPS
+      eval "$(jump shell zsh --bind=z)"
     '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "tmux" ];
       theme = "robbyrussell";
     };
-    envExtra = ''
-      ZSH_TMUX_AUTOSTART=true
-      EDITOR=nvim
-    '';
   };
 
   programs.alacritty = {
@@ -94,23 +94,25 @@ in
 
   home.packages = [
     pkgs.neovim-nightly
-    pkgsUnstable.aws-vault
-    pkgsUnstable.awscli2
-    pkgsUnstable.difftastic
-    pkgsUnstable.dive
-    pkgsUnstable.etcher
-    pkgsUnstable.insomnia
-    pkgsUnstable.jump
-    pkgsUnstable.krita
-    pkgsUnstable.kube3d
-    pkgsUnstable.kubectl
-    pkgsUnstable.lens
-    pkgsUnstable.slack
-    pkgsUnstable.spotify
-    pkgsUnstable.tig
-    pkgsUnstable.vale
-    pkgsUnstable.wezterm
-    pkgsUnstable.zoom-us
+    pkgs.aws-vault
+    pkgs.awscli2
+    pkgs.difftastic
+    pkgs.dive
+    pkgs.etcher
+    pkgs.gcc
+    pkgs.insomnia
+    pkgs.jump
+    pkgs.krita
+    pkgs.kube3d
+    pkgs.kubectl
+    pkgs.lens
+    pkgs.ruby
+    pkgs.slack
+    pkgs.spotify
+    pkgs.tig
+    pkgs.vale
+    pkgs.wezterm
+    pkgs.zoom-us
   ];
 
   # This value determines the Home Manager release that your
