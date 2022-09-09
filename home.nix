@@ -63,6 +63,7 @@
       core.editor = "nvim";
       commit.template = "~/.dotfiles/gitmessage";
       diff.external = "difft";
+      push.autoSetupRemote = true;
     };
   };
 
