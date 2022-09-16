@@ -76,6 +76,18 @@ return require('packer').startup(function()
     plugins = { default = true }
   })
 
+  -- allow easy folding with tree-sitter using :AerialToggle
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup({
+      manage_folds = true,
+      link_folds_to_tree = true
+    }) end
+  }
+  -- do not let aerial fold file automatically when opening it
+  vim.o.foldlevelstart = 99
+  vim.o.foldlevel = 99
+
   -- status line
   use 'nvim-lualine/lualine.nvim'
   require('lualine').setup {
