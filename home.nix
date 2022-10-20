@@ -94,7 +94,6 @@
   ];
 
   home.packages = [
-    pkgs.neovim-nightly
     pkgs.aws-vault
     pkgs.awscli2
     pkgs.difftastic
@@ -107,6 +106,7 @@
     pkgs.kube3d
     pkgs.kubectl
     pkgs.lens
+    pkgs.neovim-nightly
     pkgs.ruby
     pkgs.slack
     pkgs.spotify
