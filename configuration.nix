@@ -30,10 +30,10 @@
     efiSupport = true;
     enableCryptodisk = true;
   };
-  
+
   boot.initrd = {
     luks.devices."root" = {
-      device = "/dev/disk/by-uuid/2841e9b3-6907-4587-9cd1-1e2943423657"; # UUID for /dev/nvme01np2 
+      device = "/dev/disk/by-uuid/2841e9b3-6907-4587-9cd1-1e2943423657"; # UUID for /dev/nvme01np2
       preLVM = true;
       keyFile = "/keyfile0.bin";
       allowDiscards = true;
@@ -101,7 +101,7 @@
   users.users.dominik = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    
+
     extraGroups = [
       "wheel"
       "networkmanager"
@@ -110,6 +110,7 @@
   };
 
   # add thinkfan if necessary to control fan
+  # lm_sensors
   environment.systemPackages = with pkgs; [
     # xcape
     # xorg.xmodmap
@@ -119,7 +120,6 @@
     fzf
     git
     jq
-    lm_sensors
     neovim
     ripgrep
     tmux
@@ -161,4 +161,3 @@
   system.stateVersion = "21.05"; # Did you read the comment?
 
 }
-
