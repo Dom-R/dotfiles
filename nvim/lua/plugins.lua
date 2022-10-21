@@ -220,27 +220,22 @@ return require('packer').startup(function()
     event = "VimEnter",
     config = function()
       require("noice").setup({
-      cmdline = {
-          enabled = true, -- enables the Noice cmdline UI
-          view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-          view_search = "cmdline_popup_search", -- view for rendering the cmdline for search
-          opts = { buf_options = { filetype = "vim" } }, -- enable syntax highlighting in the cmdline
+        cmdline = {
           icons = {
             ["/"] = { icon = "/", hl_group = "NoiceCmdlineIconSearch" },
             ["?"] = { icon = "?", hl_group = "NoiceCmdlineIconSearch" },
             [":"] = { icon = ":", hl_group = "NoiceCmdlineIcon", firstc = false },
           },
         },
+        messages = {
+          view_search = "mini", -- view for search count messages. Set to `false` to disable
+        },
       })
     end,
     requires = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
-      }
+    }
   }
 
   -- visual f,F,t,T search
