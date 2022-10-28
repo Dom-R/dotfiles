@@ -19,6 +19,12 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   -- packer manages itself
   use {'wbthomason/packer.nvim', opt = true}
+  vim.cmd([[
+    augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    augroup end
+  ]])
 
   -- telescope
   use {
