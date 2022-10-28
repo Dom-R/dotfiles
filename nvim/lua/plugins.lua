@@ -104,38 +104,38 @@ return require('packer').startup(function()
       icons_enabled = false
     },
     sections = {
-        lualine_a = {"mode"},
-        lualine_b = {
-          {
-              "filename",
-              path = 1,
-              separator = vim.trim(breadcrump_sep),
-              fmt = function(str)
-                local path_separator = package.config:sub(1, 1)
-                return str:gsub(path_separator, breadcrump_sep)
-              end
-          },
-          { "aerial", sep = breadcrump_sep },
+      lualine_a = {"mode"},
+      lualine_b = {
+        {
+          "filename",
+          path = 1,
+          separator = vim.trim(breadcrump_sep),
+          fmt = function(str)
+            local path_separator = package.config:sub(1, 1)
+            return str:gsub(path_separator, breadcrump_sep)
+          end
         },
-        lualine_c = {},
-        lualine_x = {"lsp_progress"},
-        lualine_y = {
-          "diagnostics",
-          {
-              "encoding",
-              cond = function()
-                -- UTF-8 is the de-facto standard encoding and is what
-                -- most users expect by default. There's no need to
-                -- show encoding unless it's something else.
-                local fenc = vim.opt.fenc:get()
-                return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
-              end,
-          },
-          "filetype",
-          "fileformat",
-          "progress",
+        { "aerial", sep = breadcrump_sep },
+      },
+      lualine_c = {},
+      lualine_x = {"lsp_progress"},
+      lualine_y = {
+        "diagnostics",
+        {
+          "encoding",
+          cond = function()
+            -- UTF-8 is the de-facto standard encoding and is what
+            -- most users expect by default. There's no need to
+            -- show encoding unless it's something else.
+            local fenc = vim.opt.fenc:get()
+            return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
+          end,
         },
-        lualine_z = {"location"},
+        "filetype",
+        "fileformat",
+        "progress",
+      },
+      lualine_z = {"location"},
     }
   }
 
@@ -236,10 +236,16 @@ return require('packer').startup(function()
     config = function()
       require("noice").setup({
         cmdline = {
-          icons = {
-            ["/"] = { icon = "/", hl_group = "NoiceCmdlineIconSearch" },
-            ["?"] = { icon = "?", hl_group = "NoiceCmdlineIconSearch" },
-            [":"] = { icon = ":", hl_group = "NoiceCmdlineIcon", firstc = false },
+          format = {
+            -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
+            -- view: (default is cmdline view)
+            -- opts: any options passed to the view
+            -- icon_hl_group: optional hl_group for the icon
+            cmdline = { pattern = "^:", icon = ":" },
+            search_down = { kind = "search", pattern = "^/", icon = "/", lang = "regex" },
+            search_up = { kind = "search", pattern = "^%?", icon = "?", lang = "regex" },
+            filter = { pattern = "^:%s*!", icon = "$", lang = "sh" },
+            lua = false,
           },
         },
         messages = {
@@ -252,6 +258,7 @@ return require('packer').startup(function()
       "rcarriga/nvim-notify",
     }
   }
+  --require("telescope").load_extension("noice")
 
   -- visual f,F,t,T search
   use {
