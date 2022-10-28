@@ -18,28 +18,35 @@ vim.cmd [[packadd packer.nvim]]
 --- git clone https://github.com/wbthomason/packer.nvim "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/packer.nvim
 return require('packer').startup(function()
   -- packer manages itself
-  use {'wbthomason/packer.nvim', opt = true}
-  vim.cmd([[
-    augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-    augroup end
-  ]])
+  use {
+    'wbthomason/packer.nvim',
+    opt = true,
+    config = function()
+      vim.cmd([[
+        augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+        augroup end
+        ]])
+    end
+  }
 
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  require('telescope').setup {
-    defaults = {
-      mappings = {
-        i = {
-          ["<C-Down>"] = require('telescope.actions').cycle_history_next,
-          ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
-        },
-      },
-    }
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require('telescope').setup {
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-Down>"] = require('telescope.actions').cycle_history_next,
+              ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+            },
+          },
+        }
+      }
+    end
   }
   --map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
   map('n', '<leader>f', function()
@@ -95,82 +102,98 @@ return require('packer').startup(function()
   vim.o.foldlevel = 99
 
   -- status line
-  use 'nvim-lualine/lualine.nvim'
-  local breadcrump_sep = " ⟩ "
-  require('lualine').setup {
-    options = {
-      section_separators = '',
-      component_separators = '',
-      icons_enabled = false
-    },
-    sections = {
-      lualine_a = {"mode"},
-      lualine_b = {
-        {
-          "filename",
-          path = 1,
-          separator = vim.trim(breadcrump_sep),
-          fmt = function(str)
-            local path_separator = package.config:sub(1, 1)
-            return str:gsub(path_separator, breadcrump_sep)
-          end
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      local breadcrump_sep = " ⟩ "
+      require('lualine').setup {
+        options = {
+          section_separators = '',
+          component_separators = '',
+          icons_enabled = false
         },
-        { "aerial", sep = breadcrump_sep },
-      },
-      lualine_c = {},
-      lualine_x = {"lsp_progress"},
-      lualine_y = {
-        "diagnostics",
-        {
-          "encoding",
-          cond = function()
-            -- UTF-8 is the de-facto standard encoding and is what
-            -- most users expect by default. There's no need to
-            -- show encoding unless it's something else.
-            local fenc = vim.opt.fenc:get()
-            return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
-          end,
-        },
-        "filetype",
-        "fileformat",
-        "progress",
-      },
-      lualine_z = {"location"},
-    }
+        sections = {
+          lualine_a = {"mode"},
+          lualine_b = {
+            {
+              "filename",
+              path = 1,
+              separator = vim.trim(breadcrump_sep),
+              fmt = function(str)
+                local path_separator = package.config:sub(1, 1)
+                return str:gsub(path_separator, breadcrump_sep)
+              end
+            },
+            { "aerial", sep = breadcrump_sep },
+          },
+          lualine_c = {},
+          lualine_x = {"lsp_progress"},
+          lualine_y = {
+            "diagnostics",
+            {
+              "encoding",
+              cond = function()
+                -- UTF-8 is the de-facto standard encoding and is what
+                -- most users expect by default. There's no need to
+                -- show encoding unless it's something else.
+                local fenc = vim.opt.fenc:get()
+                return string.len(fenc) > 0 and string.lower(fenc) ~= "utf-8"
+              end,
+            },
+            "filetype",
+            "fileformat",
+            "progress",
+          },
+          lualine_z = {"location"},
+        }
+      }
+    end
   }
 
   -- indentation visualizer
-  use 'lukas-reineke/indent-blankline.nvim'
-  require("indent_blankline").setup {
-    char = "",
-    context_char = "⋅",
-    show_current_context = true,
-    show_current_context_start = true,
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require("indent_blankline").setup {
+        char = "",
+        context_char = "⋅",
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end
   }
 
   -- preview lines before jumping with :<number>
-  use 'nacro90/numb.nvim'
-  require('numb').setup()
+  use {
+    'nacro90/numb.nvim',
+    config = function()
+      require('numb').setup()
+    end
+  }
 
   -- file tree
-  use 'kyazdani42/nvim-tree.lua'
-  require'nvim-tree'.setup {
-    hijack_directories  = {
-      enable = true,
-      auto_open = true,
-    },
-    hijack_cursor       = true,
-    renderer = {
-      icons = {
-        git_placement = "signcolumn",
-        show = {
-          git = true,
-          folder = false,
-          folder_arrow = false,
-          file = false,
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function()
+      require'nvim-tree'.setup {
+        hijack_directories  = {
+          enable = true,
+          auto_open = true,
+        },
+        hijack_cursor       = true,
+        renderer = {
+          icons = {
+            git_placement = "signcolumn",
+            show = {
+              git = true,
+              folder = false,
+              folder_arrow = false,
+              file = false,
+            }
+          }
         }
       }
-    }
+    end
   }
   map('n', '<leader>n', ':NvimTreeToggle<cr>')
 
@@ -280,27 +303,31 @@ return require('packer').startup(function()
   --require("lspconfig").solargraph.setup{}
 
   -- linter
-  use 'jose-elias-alvarez/null-ls.nvim'
-  null_ls = require("null-ls")
-  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-  null_ls.setup({
-    sources = {
-      null_ls.builtins.formatting.trim_whitespace,
-      null_ls.builtins.diagnostics.trail_space
-    },
-    on_attach = function(client, bufnr)
-      if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          group = augroup,
-          buffer = bufnr,
-          callback = function()
-            vim.lsp.buf.format({ bufnr = bufnr })
-          end,
-        })
-      end
-    end,
-  })
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      null_ls = require("null-ls")
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.trim_whitespace,
+          null_ls.builtins.diagnostics.trail_space
+        },
+        on_attach = function(client, bufnr)
+          if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({ bufnr = bufnr })
+              end,
+            })
+          end
+        end,
+      })
+    end
+  }
 
   -- Automatically set up configuration after cloning packer.nvim
   -- Put this at the end after all plugins
