@@ -176,12 +176,17 @@ return require('packer').startup(function()
 
   -- tree-sitter
   -- to install languages use :TSInstall <lang>
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false
-    }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = { "vim", "lua", "bash", "regex", "ruby" },
+        indent = {
+          enable = true
+        }
+      }
+    end
   }
 
   -- automatic annotations/comments with :Neogen
@@ -201,25 +206,29 @@ return require('packer').startup(function()
   }
 
   -- fancy notifications
-  use 'rcarriga/nvim-notify'
-  vim.notify = require("notify")
-  vim.notify.setup({
-    background_colour = "Normal",
-    fps = 30,
-    icons = {
-      DEBUG = "",
-      ERROR = "",
-      INFO = "",
-      TRACE = "",
-      WARN = ""
-    },
-    level = "info",
-    minimum_width = 50,
-    render = "default",
-    stages = "slide",
-    timeout = 5000
-  })
-  require("telescope").load_extension("notify")
+  use {
+    'rcarriga/nvim-notify',
+    config = function()
+      vim.notify = require("notify")
+      vim.notify.setup({
+        background_colour = "Normal",
+        fps = 30,
+        icons = {
+          DEBUG = "",
+          ERROR = "",
+          INFO = "",
+          TRACE = "",
+          WARN = ""
+        },
+        level = "info",
+        minimum_width = 50,
+        render = "default",
+        stages = "slide",
+        timeout = 5000
+      })
+      require("telescope").load_extension("notify")
+    end
+  }
 
   use {
     "folke/noice.nvim",
