@@ -204,7 +204,7 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = function()
       require'nvim-treesitter.configs'.setup {
-        ensure_installed = { "vim", "lua", "bash", "regex", "ruby" },
+        ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby" },
         indent = {
           enable = true
         }
