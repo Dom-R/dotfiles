@@ -260,19 +260,23 @@ return require('packer').startup(function()
       require("noice").setup({
         cmdline = {
           format = {
-            -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
-            -- view: (default is cmdline view)
-            -- opts: any options passed to the view
-            -- icon_hl_group: optional hl_group for the icon
-            cmdline = { pattern = "^:", icon = ":" },
-            search_down = { kind = "search", pattern = "^/", icon = "/", lang = "regex" },
-            search_up = { kind = "search", pattern = "^%?", icon = "?", lang = "regex" },
-            filter = { pattern = "^:%s*!", icon = "$", lang = "sh" },
-            lua = false,
+            cmdline = { icon = ":" },
+            search_down = { icon = "/" },
+            search_up = { icon = "?" },
+            filter = { icon = "$" },
+            lua = { icon = "" },
+            help = { icon = "?" },
           },
         },
         messages = {
           view_search = "mini", -- view for search count messages. Set to `false` to disable
+        },
+        routes = {
+          {
+            view = "mini",
+            filter = { event = "msg_show", find = ".*written" },
+            --opts = { skip = true },
+          },
         },
       })
     end,
