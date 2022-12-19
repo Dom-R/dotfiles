@@ -40,13 +40,13 @@ return require('packer').startup(function()
             i = {
               ["<C-Down>"] = require('telescope.actions').cycle_history_next,
               ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+              ["<C-f>"] = require('telescope.actions').to_fuzzy_refine,
             },
           },
         }
       }
     end
   }
-  --map('n', '<leader>f', '<cmd>Telescope find_files<cr>')
   map('n', '<leader>f', function()
     require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '--smart-case', '-g', '!.git' }})
   end)
