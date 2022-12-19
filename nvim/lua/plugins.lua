@@ -58,7 +58,7 @@ return require('packer').startup(function()
   use 'mbbill/undotree'
   map('n', '<leader>u', ':UndotreeToggle<cr>')
 
-  -- git intergration
+  -- git integration
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
 

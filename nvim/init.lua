@@ -16,7 +16,7 @@ opt.ignorecase = true                          -- Ignore case when searching
 opt.smartcase = true                           -- Don't ignore case with capitals when searching
 opt.inccommand = 'split'                       -- Enable highlight and preview when substituting
 opt.joinspaces = false                         -- No double spaces with join after a dot
-opt.scrolloff = 4                              -- Lines of context
+opt.scrolloff = 8                              -- Lines of context
 opt.shiftround = true                          -- Round indent
 opt.sidescrolloff = 8                          -- Columns of context
 opt.splitbelow = true                          -- Put new windows below current
@@ -28,18 +28,20 @@ opt.number = true                              -- Line number
 opt.relativenumber = true                      -- Relative line numbers
 opt.wrap = false                               -- Disable line wrap
 opt.showmode = false                           -- Disable showing the mode on cmd area
-opt.foldexpr = 'nvim_treesitter#foldexpr()'    -- Tree-sitter based folding
+opt.spelloptions = 'camel,noplainbuffer'       -- Spell Checking
+opt.splitkeep = 'screen'                       -- Keeps text on the same position when splitting the screen
+opt.virtualedit = 'all'                        -- allow cursor to be positioned anywhere
 
 -- highlight yank
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 
--- Saving keystrokes when moving between splits
+-- save keystrokes when moving between splits
 map('n', '<C-j>', '<C-w><C-j>')
 map('n', '<C-k>', '<C-w><C-k>')
 map('n', '<C-l>', '<C-w><C-l>')
 map('n', '<C-h>', '<C-w><C-h>')
 
--- Use leader as a shortcut to copy and paste from system buffer
+-- use leader as a shortcut to copy and paste from system buffer
 map('v', '<Leader>y', '"+y')
 map('n', '<Leader>yy', '"+yy')
 map('n', '<Leader>p', '"+p')
@@ -47,3 +49,11 @@ map('v', '<Leader>p', '"+p')
 
 -- exit terminal mode with esc
 map('t', '<Esc>', '<C-\\><C-n>')
+
+-- allow moving highlighted code through
+map('v', 'J', ":m '>+1<CR>gv=gv", {silent = true})
+map('v', 'K', ":m '<-2<CR>gv=gv", {silent = true})
+
+-- keep cursor on same position when merging lines
+map('n', 'J', 'mzJ`z')
+map('n', 'gJ', 'mzgJ`z')
