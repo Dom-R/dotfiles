@@ -1,11 +1,10 @@
 -- helper functions
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local opt = vim.opt
 local map = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 
-require('plugins')
+require('config.lazy')
 
 local indent = 2
 opt.expandtab = true                           -- Use spaces instead of tabs
