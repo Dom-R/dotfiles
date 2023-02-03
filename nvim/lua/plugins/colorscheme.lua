@@ -3,6 +3,8 @@ return {
 
   {
     'echasnovski/mini.base16',
+    lazy = true,
+    priority=1000,
     init = function()
       require('mini.base16').setup({
         palette = {

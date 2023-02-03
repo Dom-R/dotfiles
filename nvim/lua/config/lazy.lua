@@ -20,6 +20,7 @@ require("lazy").setup({
     config = function()
       require('neogen').setup {}
     end,
+    cmd = "Neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
 })
