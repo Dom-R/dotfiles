@@ -53,10 +53,6 @@ map('v', '<Leader>p', '"+p')
 -- exit terminal mode with esc
 map('t', '<Esc>', '<C-\\><C-n>')
 
--- allow moving highlighted code through
-map('v', 'J', ":m '>+1<CR>gv=gv", {silent = true})
-map('v', 'K', ":m '<-2<CR>gv=gv", {silent = true})
-
 -- keep cursor on same position when merging lines
 map('n', 'J', 'mzJ`z')
 map('n', 'gJ', 'mzgJ`z')

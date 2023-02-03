@@ -29,4 +29,12 @@ return {
       require('numb').setup()
     end
   },
+
+  -- better selection movement
+  {
+    'echasnovski/mini.move',
+    config = function()
+      require('mini.move').setup()
+    end
+  },
 }
