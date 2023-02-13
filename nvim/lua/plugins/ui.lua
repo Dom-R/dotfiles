@@ -1,12 +1,4 @@
 return {
-  -- allow easy folding with tree-sitter using :AerialToggle
-  {
-    'stevearc/aerial.nvim',
-    config = function()
-      require('aerial').setup()
-    end
-  },
-
   -- indentation visualizer
   {
     'lukas-reineke/indent-blankline.nvim',
