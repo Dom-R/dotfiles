@@ -34,6 +34,7 @@ opt.swapfile = false                           -- disable swap
 opt.backup = false                             -- disable backup
 opt.undodir = fn.stdpath('data') .. '/undodir' -- directory to save undo files
 opt.undofile = true                            -- save file undo history
+opt.mouse = ''                                 -- disable mouse clicks
 
 -- highlight yank
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
