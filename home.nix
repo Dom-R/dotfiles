@@ -102,17 +102,12 @@
     pkgs.gcc
     pkgs.insomnia
     pkgs.jump
-    pkgs.krita
-    pkgs.kube3d
     pkgs.kubectl
-    pkgs.lens
     pkgs.neovim-nightly
-    pkgs.ruby
     pkgs.slack
     pkgs.spotify
     pkgs.tig
     pkgs.vale
-    pkgs.wezterm
     pkgs.zoom-us
   ];
 
