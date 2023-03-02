@@ -22,7 +22,7 @@ return {
       }
     end,
     keys = {
-      { '<leader>n', ':NvimTreeToggle<cr>' },
+      { '<leader>n', ':NvimTreeToggle<cr>', silent = true },
     }
   },
 
@@ -30,7 +30,7 @@ return {
   {
     'mbbill/undotree',
     keys = {
-      { '<leader>u', ':UndotreeToggle<cr>' }
+      { '<leader>u', vim.cmd.UndotreeToggle }
     }
   },
 }
