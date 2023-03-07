@@ -1,19 +1,20 @@
 return {
-  --use {
-  --    "williamboman/mason.nvim",
-  --    "williamboman/mason-lspconfig.nvim",
-  --    "neovim/nvim-lspconfig",
-  --}
-  --require("mason").setup()
-  --require("mason-lspconfig").setup()
-  --require("lspconfig").solargraph.setup{}
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require("lspconfig").ruby_ls.setup({})
+      require("lspconfig").solargraph.setup({})
+    end
+  },
 
   -- linter
   {
     'jose-elias-alvarez/null-ls.nvim',
+    dependencies = { {'nvim-lua/plenary.nvim'} },
     config = function()
-      null_ls = require("null-ls")
+      local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.trim_whitespace,
