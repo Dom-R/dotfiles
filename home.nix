@@ -25,7 +25,6 @@
     initExtra = ''
       setopt HIST_IGNORE_ALL_DUPS
       setopt HIST_SAVE_NO_DUPS
-      eval "$(jump shell zsh --bind=z)"
     '';
     oh-my-zsh = {
       enable = true;
@@ -36,6 +35,7 @@
 
   programs.alacritty = {
     enable = true;
+    #settings.font.normal.family = "iA Writer Quattro V";
     settings = {
       font.size = 16;
       key_bindings = [
