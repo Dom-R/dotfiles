@@ -1,9 +1,27 @@
 return {
   {
     'neovim/nvim-lspconfig',
+    priority = 800,
     config = function()
-      require("lspconfig").ruby_ls.setup({})
-      require("lspconfig").solargraph.setup({})
+      local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      require("lspconfig").ruby_ls.setup({
+        capabilities = cmp_capabilities,
+      })
+      require("lspconfig").solargraph.setup({
+        capabilities = cmp_capabilities,
+      })
+    end
+  },
+
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    config = function()
+      require("lsp_lines").setup()
+
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
     end
   },
 
@@ -27,7 +45,13 @@ return {
               group = augroup,
               buffer = bufnr,
               callback = function()
-                vim.lsp.buf.format({ bufnr = bufnr })
+                vim.lsp.buf.format({
+                  filter = function(client)
+                    -- By default, ignore any formatters provider by other LSPs
+                    return client.name == "null-ls"
+                  end,
+                  bufnr = bufnr,
+                })
               end,
             })
           end
