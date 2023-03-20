@@ -69,22 +69,20 @@
 
   programs.tmux = {
     enable = true;
-     #historyLimit = 5000;
-     #escapeTime = 10;
-     #keyMode = "vi";
-     #extraConfig = ''
-     #  set -as terminal-features ",alacritty*:RGB"
-     #  set-option -g focus-events on
-     #'';
+    historyLimit = 5000;
+    escapeTime = 10;
+    keyMode = "vi";
+    extraConfig = ''
+      set -as terminal-features ",alacritty*:RGB"
+      set-option -sa terminal-overrides ",alacritty*:RGB"
+      set-option -g focus-events on
+      bind -n C-k send-keys -R C-l \; clear-history
+    '';
   };
 
-  home.file = {
-    ".tmux.conf".source = ./tmux.conf;
-  };
+  programs.firefox.enable = true;
 
-  programs.firefox = {
-    enable = true;
-  };
+  programs.zoxide.enable = true;
 
   # Adds neovim nightly to pkgs
   nixpkgs.overlays = [
@@ -101,13 +99,13 @@
     pkgs.etcher
     pkgs.gcc
     pkgs.insomnia
-    pkgs.jump
     pkgs.kubectl
     pkgs.neovim-nightly
+    pkgs.ruby
     pkgs.slack
     pkgs.spotify
     pkgs.tig
-    pkgs.vale
+    pkgs.typos
     pkgs.zoom-us
   ];
 
