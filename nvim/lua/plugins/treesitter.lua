@@ -3,6 +3,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    priority = 900,
     config = function()
       require'nvim-treesitter.configs'.setup {
         ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby" },
