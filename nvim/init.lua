@@ -37,7 +37,9 @@ opt.undofile = true                            -- save file undo history
 opt.mouse = ''                                 -- disable mouse clicks
 
 -- highlight yank
-autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
+-- disabled due to https://github.com/neovim/neovim/issues/21368
+-- enable again after https://github.com/neovim/neovim/pull/21370
+--autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 
 -- save keystrokes when moving between splits
 map('n', '<C-j>', '<C-w><C-j>')
