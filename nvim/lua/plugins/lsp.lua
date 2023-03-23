@@ -10,6 +10,12 @@ return {
       })
       require("lspconfig").solargraph.setup({
         capabilities = cmp_capabilities,
+        settings = {
+          solargraph = {
+            diagnostics = true,
+            useBundler = true,
+          },
+        },
       })
     end
   },
@@ -36,7 +42,6 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.trim_whitespace,
-          null_ls.builtins.diagnostics.trail_space
         },
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
