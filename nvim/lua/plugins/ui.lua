@@ -22,32 +22,6 @@ return {
     end
   },
 
-  -- better selection movement
-  {
-    'echasnovski/mini.move',
-    config = function()
-      require('mini.move').setup(
-        {
-          mappings = {
-            left = '<Left>',
-            right = '<Right>',
-            down = '<Down>',
-            up = '<Up>',
-
-            line_left = '<Left>',
-            line_right = '<Right>',
-            line_down = '<Down>',
-            line_up = '<Up>',
-          },
-
-          options = {
-            reindent_linewise = true,
-          },
-        }
-      )
-    end
-  },
-
   -- add actions animation (ex: movement, resizing, etc)
   {
     'echasnovski/mini.animate',
