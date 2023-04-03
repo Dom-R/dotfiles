@@ -5,6 +5,9 @@ return {
     config = function()
       require('telescope').setup {
         defaults = {
+          layout_config = {
+            horizontal = { width = 0.9 }
+          },
           mappings = {
             i = {
               ["<C-Down>"] = require('telescope.actions').cycle_history_next,
