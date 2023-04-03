@@ -2,6 +2,7 @@ return {
   -- indentation visualizer
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = "BufEnter",
     config = function()
       require("indent_blankline").setup {
         use_treesitter = true,

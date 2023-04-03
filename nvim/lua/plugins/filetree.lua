@@ -1,6 +1,7 @@
 return {
   {
     'kyazdani42/nvim-tree.lua',
+    event = "VeryLazy",
     config = function()
       require'nvim-tree'.setup {
         hijack_directories  = {
