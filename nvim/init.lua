@@ -1,3 +1,6 @@
+-- https://github.com/neovim/neovim/pull/22668
+vim.loader.enable()
+
 -- helper functions
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local opt = vim.opt
