@@ -6,7 +6,7 @@ return {
     priority = 900,
     config = function()
       require'nvim-treesitter.configs'.setup {
-        ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby", "vimdoc" },
+        ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby", "vimdoc", "nix" },
 
         highlight = {
           enable = true,
