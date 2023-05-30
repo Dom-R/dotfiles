@@ -32,21 +32,6 @@
     };
   };
 
-  programs.alacritty = {
-    enable = true;
-    #settings.font.normal.family = "iA Writer Quattro V";
-    settings = {
-      font.size = 16;
-      key_bindings = [
-        {
-          key = "Insert";
-          mods = "Control";
-          action = "None";
-        }
-      ];
-    };
-  };
-
   programs.wezterm = {
     enable = true;
     extraConfig = ''
