@@ -8,15 +8,15 @@ return {
       require("lspconfig").ruby_ls.setup({
         capabilities = cmp_capabilities,
       })
-      require("lspconfig").solargraph.setup({
-        capabilities = cmp_capabilities,
-        settings = {
-          solargraph = {
-            diagnostics = true,
-            useBundler = true,
-          },
-        },
-      })
+      --require("lspconfig").solargraph.setup({
+      --  capabilities = cmp_capabilities,
+      --  settings = {
+      --    solargraph = {
+      --      diagnostics = true,
+      --      useBundler = true,
+      --    },
+      --  },
+      --})
     end
   },
 
@@ -42,6 +42,8 @@ return {
 
       null_ls.setup({
         sources = {
+          null_ls.builtins.diagnostics.typos,
+          null_ls.builtins.diagnostics.rubocop,
           null_ls.builtins.formatting.trim_whitespace,
         },
         on_attach = function(client, bufnr)
