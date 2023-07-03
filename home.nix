@@ -20,9 +20,12 @@
       NIXPKGS_ALLOW_INSECURE=1;
       NIXPKGS_ALLOW_UNFREE=1;
       AWS_VAULT_BACKEND="kwallet";
+      FZF_DEFAULT_COMMAND=''rg --files --no-ignore --hidden --follow --glob "!.git/*"'';
     };
     initExtra = ''
       setopt HIST_IGNORE_ALL_DUPS
+      setopt HIST_IGNORE_SPACE
+      setopt HIST_REDUCE_BLANKS
       setopt HIST_SAVE_NO_DUPS
     '';
     oh-my-zsh = {
@@ -45,6 +48,7 @@
       end
 
       return {
+        scrollback_lines = 10000,
         harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
         hide_tab_bar_if_only_one_tab = true,
         tab_bar_at_bottom = true,
@@ -101,13 +105,23 @@
 
   programs.firefox.enable = true;
 
+  # jump
   programs.zoxide.enable = true;
+
+  # obs-studio
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      #wlrobs
+      #obs-pipewire-audio-capture
+    ];
+  };
 
   # Adds neovim nightly to pkgs
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
+             url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+             }))
   ];
 
   home.packages = [
@@ -116,11 +130,12 @@
     pkgs.difftastic
     pkgs.dive
     pkgs.etcher
+    pkgs.flameshot
     pkgs.gcc
     pkgs.insomnia
     pkgs.kubectl
     pkgs.neovim-nightly
-    pkgs.ruby
+    pkgs.ruby_3_0
     pkgs.slack
     pkgs.spotify
     pkgs.tig
