@@ -26,9 +26,12 @@ return {
           view_search = "mini", -- view for search count messages. Set to `false` to disable
         },
         routes = {
-          { view = "mini", filter = { event = "msg_show", find = ".*written" }, },
-          --{ view = "mini", filter = { event = "msg_show", find = "Pattern not found" }, },
           { filter = { event = "msg_show", find = "search hit" }, skip = true },
+        },
+        views = {
+          mini = {
+            timeout = 3000,
+          },
         },
       })
     end,
