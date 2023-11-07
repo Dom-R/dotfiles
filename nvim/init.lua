@@ -37,7 +37,7 @@ opt.swapfile = false                           -- disable swap
 opt.backup = false                             -- disable backup
 opt.undodir = fn.stdpath('data') .. '/undodir' -- directory to save undo files
 opt.undofile = true                            -- save file undo history
-opt.mouse = ''                                 -- disable mouse clicks
+--opt.mouse = ''                                 -- disable mouse clicks DISABLED due to sometime losing focus on :Lazy or similar windows
 
 -- Native Folding without UFO
 -- TODO: Needs improvements on what to show when the fold is collapsed
