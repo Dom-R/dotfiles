@@ -25,6 +25,9 @@ return {
         messages = {
           view_search = "mini", -- view for search count messages. Set to `false` to disable
         },
+        notify = {
+          view = "mini",
+        },
         routes = {
           { filter = { event = "msg_show", find = "search hit" }, skip = true },
         },
