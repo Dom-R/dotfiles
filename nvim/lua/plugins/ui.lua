@@ -8,17 +8,18 @@ return {
   },
 
   -- indentation visualizer
+  --
+  -- use_treesitter = true,
+  -- indent = { char = "" },
+  -- context_char = "⋅",
+  -- show_current_context_start = true,
+  -- show_trailing_blankline_indent = false,
   {
     'lukas-reineke/indent-blankline.nvim',
-    event = "BufEnter",
+    main = "ibl",
     config = function()
-      require("indent_blankline").setup {
-        use_treesitter = true,
-        char = "",
-        context_char = "⋅",
-        show_current_context = true,
-        show_current_context_start = true,
-        show_trailing_blankline_indent = false,
+      require("ibl").setup {
+        indent = { char = "" },
       }
     end
   },
