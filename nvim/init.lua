@@ -100,3 +100,6 @@ vim.api.nvim_create_user_command('DiffOrig', function()
     end, { buffer = buf })
   end
 end, {})
+
+-- undo and redo on the same key
+vim.keymap.set("n", "U", "<C-r>")
