@@ -39,6 +39,17 @@ opt.undodir = fn.stdpath('data') .. '/undodir' -- directory to save undo files
 opt.undofile = true                            -- save file undo history
 opt.mouse = ''                                 -- disable mouse clicks
 
+-- Native Folding without UFO
+-- TODO: Needs improvements on what to show when the fold is collapsed
+-- https://www.reddit.com/r/neovim/comments/16xz3q9/treesitter_highlighted_folds_are_now_in_neovim/
+-- https://www.reddit.com/r/neovim/comments/16sqyjz/finally_we_can_have_highlighted_folds/
+--opt.foldmethod = "expr"
+--opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+--opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+--opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+--opt.foldlevelstart = 99
+--opt.foldenable = true
+
 -- highlight yank
 -- disable when renabling virtualedit due to https://github.com/neovim/neovim/issues/21368
 -- can be indefinitely enabled after https://github.com/neovim/neovim/pull/21370
