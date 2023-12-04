@@ -243,6 +243,12 @@ in
     programs.zoxide.enable = true;
   };
 
+  # TODO: Add fallback fonts
+  # https://dev.to/moniquelive/using-nerd-font-symbols-and-emoji-with-any-unpatched-font-in-linux-3kdo
+  fonts.fontconfig = {
+    enable = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
