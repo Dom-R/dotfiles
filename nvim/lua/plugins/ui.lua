@@ -37,6 +37,16 @@ return {
   --    require('mini.animate').setup()
   --  end
   --},
+  {
+    'rrethy/vim-illuminate',
+    event = "BufEnter",
+    opts = {
+      under_cursor = false,
+    },
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+    end
+  },
 
   {
     'kevinhwang91/nvim-ufo',
