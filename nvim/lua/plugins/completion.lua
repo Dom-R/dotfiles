@@ -52,6 +52,11 @@ return {
             return vim_item
           end,
         },
+        view = {
+          entries = {
+            follow_cursor = true,
+          }
+        },
       })
 
       -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
