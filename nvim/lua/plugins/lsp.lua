@@ -5,7 +5,7 @@ return {
     config = function()
       local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      require("lspconfig").ruby_ls.setup({
+      require("lspconfig").ruby_lsp.setup({
         capabilities = cmp_capabilities,
       })
       --require("lspconfig").solargraph.setup({
