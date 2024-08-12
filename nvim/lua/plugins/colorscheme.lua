@@ -5,12 +5,13 @@ return {
     init = function ()
       require('material').setup({
         plugins = {
-        -- Available plugins:
+        -- "coc",
+        -- "colorful-winsep",
         -- "dap",
         -- "dashboard",
         -- "eyeliner",
-        -- "fidget"
-        -- "flash"
+        -- "fidget",
+        -- "flash",
         -- "gitsigns",
         -- "harpoon",
         -- "hop",
@@ -18,8 +19,9 @@ return {
            "indent-blankline",
         -- "lspsaga",
         -- "mini",
-        -- "neotest",
         -- "neogit",
+        -- "neotest",
+        -- "neo-tree",
         -- "neorg",
            "noice",
            "nvim-cmp",
@@ -31,6 +33,7 @@ return {
            "telescope",
         -- "trouble",
         -- "which-key",
+        -- "nvim-notify",
         },
 
         disable = {

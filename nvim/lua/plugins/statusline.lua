@@ -4,6 +4,7 @@ return {
     config = function()
       local breadcrump_sep = " ⟩ "
       require('lualine').setup {
+        theme = "material-stealth",
         options = {
           section_separators = '',
           component_separators = '',
@@ -21,7 +22,6 @@ return {
                 return str:gsub(path_separator, breadcrump_sep)
               end
             },
-            { "aerial", sep = breadcrump_sep },
           },
           lualine_c = {},
           lualine_x = {"lsp_progress"},

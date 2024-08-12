@@ -10,7 +10,7 @@ return {
   -- indentation visualizer
   {
     'lukas-reineke/indent-blankline.nvim',
-    event = "BufEnter",
+    event = { "BufReadPost", "BufNewFile" },
     main = "ibl",
     opts = {
       indent = { char = " " },
@@ -25,6 +25,7 @@ return {
   -- preview lines before jumping with :<number>
   {
     'nacro90/numb.nvim',
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require('numb').setup()
     end
@@ -39,7 +40,7 @@ return {
   --},
   {
     'rrethy/vim-illuminate',
-    event = "BufEnter",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
       under_cursor = false,
     },
@@ -50,6 +51,7 @@ return {
 
   {
     'kevinhwang91/nvim-ufo',
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
@@ -76,6 +78,7 @@ return {
 
   {
     'stevearc/oil.nvim',
+    cmd = "Oil",
     config = function()
       require("oil").setup()
     end

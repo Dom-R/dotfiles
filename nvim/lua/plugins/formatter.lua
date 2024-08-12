@@ -5,7 +5,8 @@ return {
     cmd = { "ConformInfo" },
     opts = {
       formatters_by_ft = {
-        ["*"] = { "trim_whitespace", "trim_newlines" }
+        ["*"] = { "trim_whitespace", "trim_newlines" },
+        -- ruby = { "rubyfmt" }
       },
       format_on_save = {
         -- These options will be passed to conform.format()

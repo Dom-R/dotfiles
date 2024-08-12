@@ -2,8 +2,8 @@ return {
   -- to install languages use :TSInstall <lang>
   {
     'nvim-treesitter/nvim-treesitter',
+    event = { "BufReadPost", "BufNewFile" },
     build = ':TSUpdate',
-    priority = 900,
     config = function()
       require'nvim-treesitter.configs'.setup {
         ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby", "vimdoc", "nix", "comment" },
@@ -22,7 +22,14 @@ return {
   },
 
   {
+    "altermo/ultimate-autopair.nvim",
+    event= { "InsertEnter", "CmdlineEnter" },
+    opts = {},
+  },
+
+  {
     'rrethy/nvim-treesitter-endwise',
+    event = { "BufReadPost", "BufNewFile" },
     init = function()
       require('nvim-treesitter.configs').setup {
         endwise = {

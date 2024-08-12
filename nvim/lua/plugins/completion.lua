@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    priority = 700,
+    event = "InsertEnter",
     dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',

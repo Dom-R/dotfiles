@@ -29,6 +29,7 @@ return {
       { "<leader>g", '<cmd>Telescope live_grep<cr>' },
       { '<leader>b', '<cmd>Telescope buffers<cr>' },
       { '<leader>h', '<cmd>Telescope help_tags<cr>' },
+      { '<leader>r', '<cmd>Telescope resume<cr>' },
     },
 
   },
