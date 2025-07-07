@@ -8,6 +8,7 @@ local map = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 
 require('config.lazy')
+require("config.lsp")
 
 local indent = 2
 opt.expandtab = true                           -- Use spaces instead of tabs
