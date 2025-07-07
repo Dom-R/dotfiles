@@ -1,4 +1,13 @@
 return {
+  -- automatic annotations/comments with :Neogen
+  {
+    "danymat/neogen",
+    config = function()
+      require('neogen').setup {}
+    end,
+    cmd = "Neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
   -- undo tree
   {
     'mbbill/undotree',
