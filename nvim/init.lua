@@ -56,7 +56,7 @@ opt.undofile = true                            -- save file undo history
 -- can be indefinitely enabled after https://github.com/neovim/neovim/pull/21370
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 
--- save keystrokes when moving between splits
+-- shorten keystrokes when moving between splits
 map('n', '<C-j>', '<C-w><C-j>')
 map('n', '<C-k>', '<C-w><C-k>')
 map('n', '<C-l>', '<C-w><C-l>')
@@ -65,8 +65,7 @@ map('n', '<C-h>', '<C-w><C-h>')
 -- use leader as a shortcut to copy and paste from system buffer
 map('v', '<Leader>y', '"+y')
 map('n', '<Leader>yy', '"+yy')
-map('n', '<Leader>p', '"+p')
-map('v', '<Leader>p', '"+p')
+map({'n', 'v'}, '<Leader>p', '"+p')
 
 -- exit terminal mode with esc
 map('t', '<Esc>', '<C-\\><C-n>')
