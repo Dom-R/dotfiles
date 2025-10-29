@@ -1,8 +1,12 @@
 return {
   { 'neovim/nvim-lspconfig' },
   {
+    'mason-org/mason.nvim',
+    opts = {}
+  },
+  {
     "folke/trouble.nvim",
-    opts = {},
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
     keys = {
       {
