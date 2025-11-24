@@ -20,13 +20,6 @@ return {
       }
     end
   },
-
-  {
-    "altermo/ultimate-autopair.nvim",
-    event= { "InsertEnter", "CmdlineEnter" },
-    opts = {},
-  },
-
   {
     'rrethy/nvim-treesitter-endwise',
     event = { "BufReadPost", "BufNewFile" },
