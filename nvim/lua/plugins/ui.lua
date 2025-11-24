@@ -40,13 +40,6 @@ return {
     end
   },
 
-  -- add actions animation (ex: movement, resizing, etc)
-  --{
-  --  'echasnovski/mini.animate',
-  --  config = function()
-  --    require('mini.animate').setup()
-  --  end
-  --},
   {
     'rrethy/vim-illuminate',
     event = { "BufReadPost", "BufNewFile" },
