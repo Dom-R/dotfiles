@@ -12,6 +12,11 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       },
+      picker = {
+        -- your picker configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
       --indent = {
       --  enabled = true,
       --  char = "a",
@@ -22,15 +27,14 @@ return {
       --  -- refer to the configuration section below
       --}
     },
-    custom_keys = {
-      {
-        "<leader>oy",
-        function()
-          Snacks.gitbrowse.open()
-        end,
-        mode = { "n", "v" },
-        desc = "Open git file in browser"
-      },
+    keys = {
+      { "<leader>oy", function() Snacks.gitbrowse.open() end, mode = { "n", "v" }, desc = "Open git file in browser" },
+      { "<leader>f", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>g", function() Snacks.picker.grep() end, desc = "Grep" },
+      { '<leader>b', function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { '<leader>h', function() Snacks.picker.help() end, desc = "Help Pages" },
+      { '<leader>r', function() Snacks.picker.resume() end, desc = "Resume" },
+      { "<leader>q", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
     },
   }
 }
