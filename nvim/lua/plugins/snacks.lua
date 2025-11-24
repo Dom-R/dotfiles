@@ -7,6 +7,11 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       },
+      scroll = {
+        -- your scroll configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      },
       --indent = {
       --  enabled = true,
       --  char = "a",
