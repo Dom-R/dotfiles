@@ -29,7 +29,7 @@ return {
     },
     keys = {
       { "<leader>oy", function() Snacks.gitbrowse.open() end, mode = { "n", "v" }, desc = "Open git file in browser" },
-      { "<leader>f", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>f", function() Snacks.picker.files() end, desc = "Smart Find Files" },
       { "<leader>g", function() Snacks.picker.grep() end, desc = "Grep" },
       { '<leader>b', function() Snacks.picker.buffers() end, desc = "Buffers" },
       { '<leader>h', function() Snacks.picker.help() end, desc = "Help Pages" },
