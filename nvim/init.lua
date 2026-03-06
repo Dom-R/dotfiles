@@ -56,11 +56,11 @@ opt.undofile = true                            -- save file undo history
 -- can be indefinitely enabled after https://github.com/neovim/neovim/pull/21370
 autocmd("TextYankPost", {callback = function() vim.highlight.on_yank {on_visual = true} end})
 
--- shorten keystrokes when moving between splits
-map('n', '<C-j>', '<C-w><C-j>')
-map('n', '<C-k>', '<C-w><C-k>')
-map('n', '<C-l>', '<C-w><C-l>')
-map('n', '<C-h>', '<C-w><C-h>')
+-- uses keyboard layout 2(here arrows are mapped to hjkl to move between splits
+map('n', '<Down>', '<C-w><C-j>')
+map('n', '<Up>', '<C-w><C-k>')
+map('n', '<Right>', '<C-w><C-l>')
+map('n', '<Left>', '<C-w><C-h>')
 
 -- use leader as a shortcut to copy and paste from system buffer
 map('v', '<Leader>y', '"+y')

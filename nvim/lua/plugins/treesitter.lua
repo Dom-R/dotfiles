@@ -4,6 +4,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     event = { "BufReadPost", "BufNewFile" },
     build = ':TSUpdate',
+    branch = 'master',
     config = function()
       require'nvim-treesitter.configs'.setup {
         ensure_installed = { "vim", "lua", "bash", "regex", "markdown", "markdown_inline", "ruby", "vimdoc", "comment" },

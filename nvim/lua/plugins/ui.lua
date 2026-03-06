@@ -1,13 +1,4 @@
 return {
-  -- automatic annotations/comments with :Neogen
-  {
-    "danymat/neogen",
-    config = function()
-      require('neogen').setup {}
-    end,
-    cmd = "Neogen",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-  },
   -- undo tree
   {
     'mbbill/undotree',
@@ -17,27 +8,24 @@ return {
   },
 
   -- indentation visualizer
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    event = { "BufReadPost", "BufNewFile" },
-    main = "ibl",
-    opts = {
-      indent = { char = " " },
-      scope = {
-        char = "▏",
-        show_start = false,
-        show_end = false,
-      },
-    }
-  },
+  --{
+  --  'lukas-reineke/indent-blankline.nvim',
+  --  event = { "BufReadPost", "BufNewFile" },
+  --  main = "ibl",
+  --  opts = {
+  --    indent = { char = " " },
+  --    scope = {
+  --      char = "▏",
+  --      show_start = false,
+  --      show_end = false,
+  --    },
+  --  }
+  --},
 
   -- preview lines before jumping with :<number>
   {
     'nacro90/numb.nvim',
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require('numb').setup()
-    end
+    opts = {},
   },
 
   {
@@ -119,9 +107,15 @@ return {
 
   {
     'stevearc/oil.nvim',
-    cmd = "Oil",
-    config = function()
-      require("oil").setup()
-    end
+    opts = {},
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
   },
+
+  {
+    "zion-off/mole.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  }
 }
